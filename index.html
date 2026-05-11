@@ -208,6 +208,14 @@ h1.ht em{font-style:normal;background:linear-gradient(110deg,var(--accent) 0%,va
 .aico-n{font-size:8px;color:var(--text-m);font-weight:500;text-align:center;max-width:52px;}
 .tchips{display:flex;gap:6px;flex-wrap:wrap;}
 .tchip{padding:3px 9px;background:var(--card);border:1px solid var(--border);border-radius:100px;font-size:10px;color:var(--text-m);}
+.tchip.flutter{background:linear-gradient(135deg,#0468d7,#42a5f5);border-color:rgba(66,165,245,.55);color:#fff;font-weight:700;padding:4px 11px;box-shadow:0 4px 12px rgba(4,104,215,.35);position:relative;}
+.tchip.flutter::before{content:'🦋';margin-right:5px;}
+.pill.flutter{background:linear-gradient(135deg,rgba(4,104,215,.18),rgba(66,165,245,.18));border-color:rgba(66,165,245,.55);color:var(--text);font-weight:600;}
+.pill.flutter .pd{background:#42a5f5;box-shadow:0 0 8px #42a5f5;}
+.tag.flutter{background:linear-gradient(135deg,#0468d7,#42a5f5);color:#fff;border-color:transparent;font-weight:700;}
+.fb.fb2{background:linear-gradient(135deg,rgba(4,104,215,.95),rgba(66,165,245,.95));border-color:rgba(66,165,245,.6);color:#fff;font-weight:700;box-shadow:0 8px 24px rgba(4,104,215,.35);}
+.cc-flutter{margin-left:auto;font-size:12px;animation:flutterSpin 4s ease-in-out infinite;}
+@keyframes flutterSpin{0%,100%{transform:rotate(0);}50%{transform:rotate(20deg) scale(1.15);}}
 
 /* LAYOUT */
 .wrap{max-width:1100px;margin:0 auto;padding:0 36px;}
@@ -313,7 +321,12 @@ h1.ht em{font-style:normal;background:linear-gradient(110deg,var(--accent) 0%,va
 .svc-item:hover{border-color:var(--bh);transform:translateY(-2px);}
 .si-ico{width:44px;height:44px;border-radius:10px;background:rgba(26,111,216,.1);border:1px solid rgba(26,111,216,.2);display:flex;align-items:center;justify-content:center;margin-bottom:12px;font-size:20px;}
 .si-name{font-family:'Syne',sans-serif;font-size:14px;font-weight:800;color:var(--text);margin-bottom:6px;transition:color .4s;}
-.si-desc{font-size:12px;color:var(--text-m);font-weight:300;line-height:1.6;}
+.si-desc{font-size:12px;color:var(--text-m);font-weight:300;line-height:1.6;margin-bottom:14px;}
+.si-price{display:flex;align-items:baseline;gap:6px;padding-top:12px;border-top:1px dashed var(--border);margin-top:auto;}
+.si-from{font-size:10px;color:var(--text-m);text-transform:uppercase;letter-spacing:.6px;}
+.si-amt{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;color:var(--text);}
+.si-cur{font-size:12px;color:var(--text-m);font-weight:500;margin-left:2px;}
+.svc-item{display:flex;flex-direction:column;}
 
 /* PACKAGES */
 .pkg-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:10px;}
@@ -384,6 +397,20 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:22
 .complexity-badge.simple{background:rgba(45,212,191,.1);border:1px solid rgba(45,212,191,.3);color:#2dd4bf;}
 .complexity-badge.medium{background:rgba(77,166,255,.1);border:1px solid rgba(77,166,255,.3);color:#4da6ff;}
 .complexity-badge.complex{background:rgba(251,191,36,.1);border:1px solid rgba(251,191,36,.3);color:#fbbf24;}
+
+/* code typing card near phone */
+.code-card{position:absolute;left:-78px;bottom:24px;width:260px;background:#0d1424;border:1px solid rgba(77,166,255,.22);border-radius:12px;box-shadow:0 24px 60px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.04) inset;overflow:hidden;font-family:'SF Mono','Menlo','Monaco',monospace;animation:ccFloat 6s ease-in-out infinite,sazFadeUp 1s .3s both;z-index:3;}
+.cc-bar{display:flex;align-items:center;gap:5px;padding:7px 10px;background:linear-gradient(180deg,#172238,#101729);border-bottom:1px solid rgba(255,255,255,.06);}
+.cc-dot{width:9px;height:9px;border-radius:50%;}
+.cc-file{margin-left:8px;font-size:10px;color:#9bb3d9;letter-spacing:.3px;}
+.cc-code{margin:0;padding:10px 12px 12px;font-size:10.5px;line-height:1.55;color:#cfe1ff;white-space:pre;max-height:170px;overflow:hidden;animation:ccType 7s steps(40,end) infinite;width:0;}
+.cc-code code{display:block;}
+.ck{color:#ff7ab6;}.ct{color:#7fd1ff;}.cs{color:#a8e6a3;}
+.cur{display:inline-block;width:6px;background:#4da6ff;margin-left:1px;animation:ccBlink .9s steps(2) infinite;color:transparent;}
+@keyframes ccType{0%{width:0;}45%{width:100%;}90%{width:100%;}100%{width:0;}}
+@keyframes ccBlink{50%{opacity:0;}}
+@keyframes ccFloat{0%,100%{transform:translateY(0) rotate(-3deg);}50%{transform:translateY(-10px) rotate(-3deg);}}
+@media (max-width:980px){.code-card{display:none;}}
 
 /* sazeo refresh — animations */
 @keyframes sazFadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
@@ -476,6 +503,18 @@ h1.ht em{background-size:200% 100%;animation:sazShimmer 6s linear infinite;}
         </div>
       </div>
       <div class="pglow"></div>
+      <div class="code-card" aria-hidden="true">
+        <div class="cc-bar"><span class="cc-dot" style="background:#ff5f56;"></span><span class="cc-dot" style="background:#ffbd2e;"></span><span class="cc-dot" style="background:#27c93f;"></span><span class="cc-file">main.dart · Flutter</span><span class="cc-flutter">🦋</span></div>
+        <pre class="cc-code"><code><span class="ck">import</span> <span class="cs">'package:flutter/material.dart'</span>;
+<span class="ck">class</span> <span class="ct">SazeoApp</span> <span class="ck">extends</span> <span class="ct">StatelessWidget</span> {
+  <span class="ck">@override</span>
+  <span class="ct">Widget</span> build(<span class="ct">BuildContext</span> c) {
+    <span class="ck">return</span> <span class="ct">Scaffold</span>(
+      body: <span class="ct">Center</span>(child: <span class="ct">Text</span>(<span class="cs">'Hello, sazeo'</span>)),
+    );<span class="cur">▌</span>
+  }
+}</code></pre>
+      </div>
     </div>
   </div>
 </div></div>
@@ -499,7 +538,7 @@ h1.ht em{background-size:200% 100%;animation:sazShimmer 6s linear infinite;}
     
   </div>
   <div class="blbl" data-i="built">Built with</div>
-  <div class="tchips"><span class="tchip">Swift</span><span class="tchip">Flutter</span><span class="tchip">Dart</span><span class="tchip">Firebase</span><span class="tchip">Node.js</span><span class="tchip">PostgreSQL</span></div>
+  <div class="tchips"><span class="tchip flutter">Flutter</span><span class="tchip">Dart</span><span class="tchip">Swift</span><span class="tchip">Firebase</span><span class="tchip">Node.js</span><span class="tchip">PostgreSQL</span></div>
 </div></div>
 
 <!-- ABOUT -->
@@ -533,7 +572,7 @@ h1.ht em{background-size:200% 100%;animation:sazShimmer 6s linear infinite;}
   <div class="stag" data-i="sk_tag">Tech Stack</div>
   <h2 class="stitle" data-i="sk_h">Tools I work with</h2>
   <div class="pills">
-    <div class="pill"><span class="pd"></span>Swift</div><div class="pill"><span class="pd"></span>Flutter</div><div class="pill"><span class="pd"></span>Dart</div><div class="pill"><span class="pd"></span>SwiftUI</div><div class="pill"><span class="pd"></span>UIKit</div><div class="pill"><span class="pd"></span>Xcode</div><div class="pill"><span class="pd"></span>Firebase</div><div class="pill"><span class="pd"></span>REST APIs</div><div class="pill"><span class="pd"></span>Node.js</div><div class="pill"><span class="pd"></span>Express.js</div><div class="pill"><span class="pd"></span>PostgreSQL</div><div class="pill"><span class="pd"></span>MongoDB</div><div class="pill"><span class="pd"></span>React</div><div class="pill"><span class="pd"></span>Next.js</div><div class="pill"><span class="pd"></span>Git / GitHub</div><div class="pill"><span class="pd"></span>App Store Connect</div><div class="pill"><span class="pd"></span>Figma</div><div class="pill"><span class="pd"></span>Docker</div><div class="pill"><span class="pd"></span>AWS / Cloud</div>
+    <div class="pill flutter"><span class="pd"></span>Flutter</div><div class="pill flutter"><span class="pd"></span>Dart</div><div class="pill"><span class="pd"></span>Swift</div><div class="pill"><span class="pd"></span>SwiftUI</div><div class="pill"><span class="pd"></span>UIKit</div><div class="pill"><span class="pd"></span>Xcode</div><div class="pill"><span class="pd"></span>Firebase</div><div class="pill"><span class="pd"></span>REST APIs</div><div class="pill"><span class="pd"></span>Node.js</div><div class="pill"><span class="pd"></span>Express.js</div><div class="pill"><span class="pd"></span>PostgreSQL</div><div class="pill"><span class="pd"></span>MongoDB</div><div class="pill"><span class="pd"></span>React</div><div class="pill"><span class="pd"></span>Next.js</div><div class="pill"><span class="pd"></span>Git / GitHub</div><div class="pill"><span class="pd"></span>App Store Connect</div><div class="pill"><span class="pd"></span>Figma</div><div class="pill"><span class="pd"></span>Docker</div><div class="pill"><span class="pd"></span>AWS / Cloud</div>
   </div>
 </div></div>
 
@@ -553,7 +592,7 @@ h1.ht em{background-size:200% 100%;animation:sazShimmer 6s linear infinite;}
         <div class="acat">Productivity · Enterprise</div>
         <div class="aname">sazeo</div>
         <p class="adesc" data-i="dmt_d">Professional HVAC system management for technicians. Control devices, manage documents, report and resolve issues — all in one place.</p>
-        <div class="atags"><span class="tag">HVAC</span><span class="tag">BAS/BMS</span><span class="tag">Enterprise</span><span class="tag">Flutter</span></div>
+        <div class="atags"><span class="tag">HVAC</span><span class="tag">BAS/BMS</span><span class="tag">Enterprise</span><span class="tag flutter">Flutter</span></div>
         <a href="https://apps.apple.com/ge/app/dmt-bas-bms/id6746461321" target="_blank" class="asb">
           <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
           App Store <svg width="9" height="9" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
@@ -618,52 +657,28 @@ h1.ht em{background-size:200% 100%;animation:sazShimmer 6s linear infinite;}
   <!-- MOBILE PANEL -->
   <div class="svc-panel active" id="panel-mobile">
     <div class="svc-items fu">
-      <div class="svc-item"><div class="si-ico">🍎</div><div class="si-name" data-i="m_s1">iOS Native Development</div><p class="si-desc" data-i="m_s1d">Swift & SwiftUI apps with full App Store submission, TestFlight beta, and ongoing maintenance.</p></div>
-      <div class="svc-item"><div class="si-ico">🦋</div><div class="si-name" data-i="m_s2">Flutter Cross-Platform</div><p class="si-desc" data-i="m_s2d">One codebase for iOS & Android. Pixel-perfect UI, native performance, both stores.</p></div>
-      <div class="svc-item"><div class="si-ico">🎨</div><div class="si-name" data-i="m_s3">UI/UX Design</div><p class="si-desc" data-i="m_s3d">App wireframes, design systems, and polished interfaces designed in Figma before development.</p></div>
-      <div class="svc-item"><div class="si-ico">🔔</div><div class="si-name" data-i="m_s4">Push Notifications</div><p class="si-desc" data-i="m_s4d">Firebase Cloud Messaging or APNs integration for targeted, scheduled, and real-time notifications.</p></div>
-      <div class="svc-item"><div class="si-ico">💳</div><div class="si-name" data-i="m_s5">In-App Purchases</div><p class="si-desc" data-i="m_s5d">Subscriptions, one-time purchases, and payment gateway integration (Stripe, Apple Pay).</p></div>
-      <div class="svc-item"><div class="si-ico">🔧</div><div class="si-name" data-i="m_s6">App Maintenance</div><p class="si-desc" data-i="m_s6d">iOS version updates, bug fixes, performance improvements, and new feature additions.</p></div>
-    </div>
+      <div class="svc-item"><div class="si-ico">🍎</div><div class="si-name" data-i="m_s1">iOS Native Development</div><p class="si-desc" data-i="m_s1d">Swift & SwiftUI apps with full App Store submission, TestFlight beta, and ongoing maintenance.</p><div class="si-price"><span class="si-from" data-i="from">from</span><span class="si-amt">2 500</span><span class="si-cur">$</span></div></div><div class="svc-item"><div class="si-ico">🦋</div><div class="si-name" data-i="m_s2">Flutter Cross-Platform</div><p class="si-desc" data-i="m_s2d">One codebase for iOS & Android. Pixel-perfect UI, native performance, both stores.</p><div class="si-price"><span class="si-from" data-i="from">from</span><span class="si-amt">3 200</span><span class="si-cur">$</span></div></div><div class="svc-item"><div class="si-ico">🎨</div><div class="si-name" data-i="m_s3">UI/UX Design</div><p class="si-desc" data-i="m_s3d">App wireframes, design systems, and polished interfaces designed in Figma before development.</p><div class="si-price"><span class="si-from" data-i="from">from</span><span class="si-amt">800</span><span class="si-cur">$</span></div></div><div class="svc-item"><div class="si-ico">🔔</div><div class="si-name" data-i="m_s4">Push Notifications</div><p class="si-desc" data-i="m_s4d">Firebase Cloud Messaging or APNs integration for targeted, scheduled, and real-time notifications.</p><div class="si-price"><span class="si-from" data-i="from">from</span><span class="si-amt">400</span><span class="si-cur">$</span></div></div><div class="svc-item"><div class="si-ico">💳</div><div class="si-name" data-i="m_s5">In-App Purchases</div><p class="si-desc" data-i="m_s5d">Subscriptions, one-time purchases, and payment gateway integration (Stripe, Apple Pay).</p><div class="si-price"><span class="si-from" data-i="from">from</span><span class="si-amt">600</span><span class="si-cur">$</span></div></div><div class="svc-item"><div class="si-ico">🔧</div><div class="si-name" data-i="m_s6">App Maintenance</div><p class="si-desc" data-i="m_s6d">iOS version updates, bug fixes, performance improvements, and new feature additions.</p><div class="si-price"><span class="si-from" data-i="from">from</span><span class="si-amt">250</span><span class="si-cur">$/mo</span></div></div></div>
     </div>
   </div>
 
   <!-- WEB PANEL -->
   <div class="svc-panel" id="panel-web">
     <div class="svc-items fu">
-      <div class="svc-item"><div class="si-ico">🎨</div><div class="si-name" data-i="w_s1">Landing Pages</div><p class="si-desc" data-i="w_s1d">High-converting, beautifully designed landing pages for products, startups, and personal brands.</p></div>
-      <div class="svc-item"><div class="si-ico">💼</div><div class="si-name" data-i="w_s2">Business Websites</div><p class="si-desc" data-i="w_s2d">Multi-page professional sites with CMS, blog, portfolio sections, and Google Analytics.</p></div>
-      <div class="svc-item"><div class="si-ico">🛒</div><div class="si-name" data-i="w_s3">E-Commerce</div><p class="si-desc" data-i="w_s3d">Online stores with payment integration, product management, and order tracking systems.</p></div>
-      <div class="svc-item"><div class="si-ico">⚡</div><div class="si-name" data-i="w_s4">Web Applications</div><p class="si-desc" data-i="w_s4d">Interactive dashboards, SaaS tools, and data-driven web apps with user auth and real-time features.</p></div>
-      <div class="svc-item"><div class="si-ico">🔍</div><div class="si-name" data-i="w_s5">SEO & Performance</div><p class="si-desc" data-i="w_s5d">Core Web Vitals optimization, meta tags, structured data, and speed improvements for better ranking.</p></div>
-      <div class="svc-item"><div class="si-ico">🔒</div><div class="si-name" data-i="w_s6">SSL & Security</div><p class="si-desc" data-i="w_s6d">HTTPS setup, security headers, CORS configuration, and protection against common web vulnerabilities.</p></div>
-    </div>
+      <div class="svc-item"><div class="si-ico">🎨</div><div class="si-name" data-i="w_s1">Landing Pages</div><p class="si-desc" data-i="w_s1d">High-converting, beautifully designed landing pages for products, startups, and personal brands.</p><div class="si-price"><span class="si-from" data-i="from">from</span><span class="si-amt">600</span><span class="si-cur">$</span></div></div><div class="svc-item"><div class="si-ico">💼</div><div class="si-name" data-i="w_s2">Business Websites</div><p class="si-desc" data-i="w_s2d">Multi-page professional sites with CMS, blog, portfolio sections, and Google Analytics.</p><div class="si-price"><span class="si-from" data-i="from">from</span><span class="si-amt">1 400</span><span class="si-cur">$</span></div></div><div class="svc-item"><div class="si-ico">🛒</div><div class="si-name" data-i="w_s3">E-Commerce</div><p class="si-desc" data-i="w_s3d">Online stores with payment integration, product management, and order tracking systems.</p><div class="si-price"><span class="si-from" data-i="from">from</span><span class="si-amt">2 200</span><span class="si-cur">$</span></div></div><div class="svc-item"><div class="si-ico">⚡</div><div class="si-name" data-i="w_s4">Web Applications</div><p class="si-desc" data-i="w_s4d">Interactive dashboards, SaaS tools, and data-driven web apps with user auth and real-time features.</p><div class="si-price"><span class="si-from" data-i="from">from</span><span class="si-amt">3 500</span><span class="si-cur">$</span></div></div><div class="svc-item"><div class="si-ico">🔍</div><div class="si-name" data-i="w_s5">SEO & Performance</div><p class="si-desc" data-i="w_s5d">Core Web Vitals optimization, meta tags, structured data, and speed improvements for better ranking.</p><div class="si-price"><span class="si-from" data-i="from">from</span><span class="si-amt">350</span><span class="si-cur">$</span></div></div><div class="svc-item"><div class="si-ico">🔒</div><div class="si-name" data-i="w_s6">SSL & Security</div><p class="si-desc" data-i="w_s6d">HTTPS setup, security headers, CORS configuration, and protection against common web vulnerabilities.</p><div class="si-price"><span class="si-from" data-i="from">from</span><span class="si-amt">180</span><span class="si-cur">$</span></div></div></div>
     </div>
   </div>
 
   <!-- FULLSTACK PANEL -->
   <div class="svc-panel" id="panel-fullstack">
     <div class="svc-items fu">
-      <div class="svc-item"><div class="si-ico">⚙️</div><div class="si-name" data-i="fs_s1">REST API Development</div><p class="si-desc" data-i="fs_s1d">Scalable, documented REST APIs with authentication, rate limiting, and proper error handling.</p></div>
-      <div class="svc-item"><div class="si-ico">🗄️</div><div class="si-name" data-i="fs_s2">Database Design</div><p class="si-desc" data-i="fs_s2d">PostgreSQL, MongoDB schema design, indexing, migrations, and performance optimization.</p></div>
-      <div class="svc-item"><div class="si-ico">🔐</div><div class="si-name" data-i="fs_s3">Auth & Security</div><p class="si-desc" data-i="fs_s3d">JWT, OAuth2, role-based access control, session management, and security best practices.</p></div>
-      <div class="svc-item"><div class="si-ico">☁️</div><div class="si-name" data-i="fs_s4">Cloud & DevOps</div><p class="si-desc" data-i="fs_s4d">AWS, Firebase, VPS deployment, Docker containers, CI/CD pipelines, and monitoring setup.</p></div>
-      <div class="svc-item"><div class="si-ico">⚡</div><div class="si-name" data-i="fs_s5">Real-Time Features</div><p class="si-desc" data-i="fs_s5d">WebSocket, live notifications, chat systems, and real-time data sync for web and mobile.</p></div>
-      <div class="svc-item"><div class="si-ico">📊</div><div class="si-name" data-i="fs_s6">Admin Dashboards</div><p class="si-desc" data-i="fs_s6d">Custom admin panels with analytics, user management, content control, and data visualization.</p></div>
-    </div>
+      <div class="svc-item"><div class="si-ico">⚙️</div><div class="si-name" data-i="fs_s1">REST API Development</div><p class="si-desc" data-i="fs_s1d">Scalable, documented REST APIs with authentication, rate limiting, and proper error handling.</p><div class="si-price"><span class="si-from" data-i="from">from</span><span class="si-amt">1 800</span><span class="si-cur">$</span></div></div><div class="svc-item"><div class="si-ico">🗄️</div><div class="si-name" data-i="fs_s2">Database Design</div><p class="si-desc" data-i="fs_s2d">PostgreSQL, MongoDB schema design, indexing, migrations, and performance optimization.</p><div class="si-price"><span class="si-from" data-i="from">from</span><span class="si-amt">900</span><span class="si-cur">$</span></div></div><div class="svc-item"><div class="si-ico">🔐</div><div class="si-name" data-i="fs_s3">Auth & Security</div><p class="si-desc" data-i="fs_s3d">JWT, OAuth2, role-based access control, session management, and security best practices.</p><div class="si-price"><span class="si-from" data-i="from">from</span><span class="si-amt">700</span><span class="si-cur">$</span></div></div><div class="svc-item"><div class="si-ico">☁️</div><div class="si-name" data-i="fs_s4">Cloud & DevOps</div><p class="si-desc" data-i="fs_s4d">AWS, Firebase, VPS deployment, Docker containers, CI/CD pipelines, and monitoring setup.</p><div class="si-price"><span class="si-from" data-i="from">from</span><span class="si-amt">1 200</span><span class="si-cur">$</span></div></div><div class="svc-item"><div class="si-ico">⚡</div><div class="si-name" data-i="fs_s5">Real-Time Features</div><p class="si-desc" data-i="fs_s5d">WebSocket, live notifications, chat systems, and real-time data sync for web and mobile.</p><div class="si-price"><span class="si-from" data-i="from">from</span><span class="si-amt">1 500</span><span class="si-cur">$</span></div></div><div class="svc-item"><div class="si-ico">📊</div><div class="si-name" data-i="fs_s6">Admin Dashboards</div><p class="si-desc" data-i="fs_s6d">Custom admin panels with analytics, user management, content control, and data visualization.</p><div class="si-price"><span class="si-from" data-i="from">from</span><span class="si-amt">2 400</span><span class="si-cur">$</span></div></div></div>
     </div>
   </div>
 
   <!-- UIUX PANEL -->
   <div class="svc-panel" id="panel-uiux">
     <div class="svc-items fu">
-      <div class="svc-item"><div class="si-ico">🏭</div><div class="si-name" data-i="c_s1">BAS/BMS Systems</div><p class="si-desc" data-i="c_s1d">Building Automation System apps for HVAC control, monitoring, alerts, and reporting — like sazeo.</p></div>
-      <div class="svc-item"><div class="si-ico">📋</div><div class="si-name" data-i="c_s2">Document Management</div><p class="si-desc" data-i="c_s2d">Digital document creation, signing workflows, storage, and retrieval systems for field teams.</p></div>
-      <div class="svc-item"><div class="si-ico">👥</div><div class="si-name" data-i="c_s3">Team Management Tools</div><p class="si-desc" data-i="c_s3d">Multi-role platforms with company accounts, permissions, task assignment, and reporting.</p></div>
-      <div class="svc-item"><div class="si-ico">📍</div><div class="si-name" data-i="c_s4">Field Service Apps</div><p class="si-desc" data-i="c_s4d">GPS tracking, route optimization, job scheduling, and on-site reporting tools for field workers.</p></div>
-      <div class="svc-item"><div class="si-ico">📊</div><div class="si-name" data-i="c_s5">Analytics & Reporting</div><p class="si-desc" data-i="c_s5d">Custom dashboards showing KPIs, energy consumption, device status, and performance metrics.</p></div>
-      <div class="svc-item"><div class="si-ico">🔗</div><div class="si-name" data-i="c_s6">System Integrations</div><p class="si-desc" data-i="c_s6d">Connect to existing hardware, sensors, third-party APIs, ERP systems, and IoT devices.</p></div>
-    </div>
+      <div class="svc-item"><div class="si-ico">🏭</div><div class="si-name" data-i="c_s1">BAS/BMS Systems</div><p class="si-desc" data-i="c_s1d">Building Automation System apps for HVAC control, monitoring, alerts, and reporting — like sazeo.</p><div class="si-price"><span class="si-from" data-i="from">from</span><span class="si-amt">4 500</span><span class="si-cur">$</span></div></div><div class="svc-item"><div class="si-ico">📋</div><div class="si-name" data-i="c_s2">Document Management</div><p class="si-desc" data-i="c_s2d">Digital document creation, signing workflows, storage, and retrieval systems for field teams.</p><div class="si-price"><span class="si-from" data-i="from">from</span><span class="si-amt">3 000</span><span class="si-cur">$</span></div></div><div class="svc-item"><div class="si-ico">👥</div><div class="si-name" data-i="c_s3">Team Management Tools</div><p class="si-desc" data-i="c_s3d">Multi-role platforms with company accounts, permissions, task assignment, and reporting.</p><div class="si-price"><span class="si-from" data-i="from">from</span><span class="si-amt">2 000</span><span class="si-cur">$</span></div></div><div class="svc-item"><div class="si-ico">📍</div><div class="si-name" data-i="c_s4">Field Service Apps</div><p class="si-desc" data-i="c_s4d">GPS tracking, route optimization, job scheduling, and on-site reporting tools for field workers.</p><div class="si-price"><span class="si-from" data-i="from">from</span><span class="si-amt">1 500</span><span class="si-cur">$</span></div></div><div class="svc-item"><div class="si-ico">📊</div><div class="si-name" data-i="c_s5">Analytics & Reporting</div><p class="si-desc" data-i="c_s5d">Custom dashboards showing KPIs, energy consumption, device status, and performance metrics.</p><div class="si-price"><span class="si-from" data-i="from">from</span><span class="si-amt">1 800</span><span class="si-cur">$</span></div></div><div class="svc-item"><div class="si-ico">🔗</div><div class="si-name" data-i="c_s6">System Integrations</div><p class="si-desc" data-i="c_s6d">Connect to existing hardware, sensors, third-party APIs, ERP systems, and IoT devices.</p><div class="si-price"><span class="si-from" data-i="from">from</span><span class="si-amt">2 500</span><span class="si-cur">$</span></div></div></div>
     </div>
   </div>
 
@@ -675,7 +690,7 @@ h1.ht em{background-size:200% 100%;animation:sazShimmer 6s linear infinite;}
     <h2 data-i="c_h">Let's build something.</h2>
     <p data-i="c_p">Have a project in mind? I'd love to hear about it. Let's talk and make it happen.</p>
     <div class="clinks">
-      <a href="/cdn-cgi/l/email-protection#483e233e29232029322d7b7d082f25292124662b2725" class="cl">✉️ &nbsp;<span class="__cf_email__" data-cfemail="15637e63747e7d746f702620557278747c793b767a78">[email&#160;protected]</span></a>
+      <a href="/cdn-cgi/l/email-protection#a7d1ccd1c6cccfc6ddc29492e7c0cac6cecb89c4c8ca" class="cl">✉️ &nbsp;<span class="__cf_email__" data-cfemail="0a7c617c6b61626b706f393f4a6d676b636624696567">[email&#160;protected]</span></a>
       <a href="https://github.com/vanokvakhadze" target="_blank" class="clg"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>GitHub</a>
       <a href="https://www.linkedin.com/in/vano-kvakhadze-0b9002267/" target="_blank" class="clg"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
     </div>
@@ -697,7 +712,7 @@ h1.ht em{background-size:200% 100%;animation:sazShimmer 6s linear infinite;}
 // ── TRANSLATIONS ──────────────────
 const T = {
 en:{
-  nav_about:'About',nav_apps:'Apps',nav_svc:'Services',nav_cta:"Let's Talk",
+  from:'from',nav_about:'About',nav_apps:'Apps',nav_svc:'Services',nav_cta:"Let's Talk",
   status:'Available for new projects',eyebrow:'Mobile & Full-Stack Developer',
   hdesc:'I build <strong>iOS & Flutter apps</strong>, full-stack web platforms, and complete digital products — from idea to production.',
   btn_apps:'View My Apps',
@@ -777,7 +792,7 @@ en:{
   c_h:"Let's build something.",c_p:"Have a project in mind? I'd love to hear about it. Let's talk and make it happen.",
 },
 ka:{
-  nav_about:'ჩვენ შესახებ',nav_apps:'აპლიკაციები',nav_svc:'სერვისები',nav_cta:'დამიკავშირდი',
+  from:'დან',nav_about:'ჩვენ შესახებ',nav_apps:'აპლიკაციები',nav_svc:'სერვისები',nav_cta:'დამიკავშირდი',
   status:'ხელმისაწვდომია პროექტებისთვის',eyebrow:'მობილური და Full-Stack დეველოპერი',
   hdesc:'ვქმნი <strong>iOS და Flutter აპლიკაციებს</strong>, full-stack ვებ პლატფორმებს, და სრულ ციფრულ პროდუქტებს — იდეიდან პროდუქციამდე.',
   btn_apps:'📱 ჩემი აპლიკაციები',
@@ -918,8 +933,10 @@ function switchCat(el) {
     `<svg width="26" height="26" fill="none" stroke="#4da6ff" stroke-width="1.5" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>`,
     // Database
     `<svg width="26" height="26" fill="none" stroke="#4da6ff" stroke-width="1.5" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/></svg>`,
-    // Cloud
-    `<svg width="26" height="26" fill="none" stroke="#4da6ff" stroke-width="1.5" viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/></svg>`,
+    // Terminal / code editor
+    `<svg width="26" height="26" fill="none" stroke="#4da6ff" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 9l3 3-3 3M12 15h6"/></svg>`,
+    // Phone with code symbols
+    `<svg width="26" height="26" fill="none" stroke="#4da6ff" stroke-width="1.5" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 8l-2 2 2 2M14 8l2 2-2 2"/></svg>`,
     // Cursor / UI
     `<svg width="26" height="26" fill="none" stroke="#4da6ff" stroke-width="1.5" viewBox="0 0 24 24"><path d="M5 3l14 9-7 1-4 7z"/></svg>`,
     // Git branch
@@ -928,7 +945,7 @@ function switchCat(el) {
     `<svg width="26" height="26" fill="none" stroke="#4da6ff" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></svg>`,
   ];
 
-  const labels = ['iOS','Flutter','Swift','Dart','Backend','UI/UX','Web','API','React','Node.js','Firebase','Design','Mobile','Cloud','Git'];
+  const labels = ['iOS','Flutter','Swift','Dart','Backend','UI/UX','Web','API','React','Node.js','Firebase','Design','Mobile','Xcode','Git','SwiftUI','Kotlin','@State','async/await','let','func','widget','build()'];
 
   // spawn icons
   icons.forEach((svg, i) => {
@@ -954,6 +971,18 @@ function switchCat(el) {
     }
   });
 })();
+
+// services anchor scroll (section has no id, fallback to panel)
+document.querySelectorAll('a[href="#services"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const t = document.getElementById('panel-mobile');
+    if (t) {
+      const y = t.getBoundingClientRect().top + window.pageYOffset - 110;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  });
+});
 
 // scroll fade
 const obs = new IntersectionObserver(e => { e.forEach(x => { if (x.isIntersecting) x.target.classList.add('vis'); }); }, { threshold: 0.08 });
