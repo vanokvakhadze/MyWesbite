@@ -382,7 +382,6 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:22
 .complexity-badge{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:100px;font-size:9px;font-weight:700;margin-bottom:10px;}
 .complexity-badge.simple{background:rgba(45,212,191,.1);border:1px solid rgba(45,212,191,.3);color:#2dd4bf;}
 .complexity-badge.medium{background:rgba(77,166,255,.1);border:1px solid rgba(77,166,255,.3);color:#4da6ff;}
-.complexity-badge.complex{background:rgba(251,191,36,.1);border:1px solid rgba(251,191,36,.3);color:#fbbf24;}
 </head>
 <body data-lang="en">
 
@@ -458,8 +457,6 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:22
               <div class="drow"><div class="dico" style="background:rgba(239,68,68,.15);">💨</div><div><div class="dn">VAV-07</div><div class="ds">Variable Air</div></div><div class="db boff">OFF</div></div>
             </div>
             <div class="pchart"><div class="pcl">Energy (kWh)</div><div class="pbars"><div class="pbar" style="height:40%;background:rgba(42,120,232,.5);"></div><div class="pbar" style="height:65%;background:rgba(42,120,232,.6);"></div><div class="pbar" style="height:50%;background:rgba(42,120,232,.5);"></div><div class="pbar" style="height:80%;background:rgba(42,120,232,.7);"></div><div class="pbar" style="height:60%;background:rgba(42,120,232,.6);"></div><div class="pbar" style="height:90%;background:rgba(77,166,255,.85);"></div></div></div>
-
-            <div class="pchart"><div class="pcl">Energy (kWh)</div><div class="pbars"><div class="pbar" style="height:40%;background:rgba(42,120,232,.5);"></div><div class="pbar" style="height:65%;background:rgba(42,120,232,.6);"></div><div class="pbar" style="height:50%;background:rgba(42,120,232,.5);"></div><div class="pbar" style="height:80%;background:rgba(42,120,232,.7);"></div><div class="pbar" style="height:60%;background:rgba(42,120,232,.6);"></div><div class="pbar" style="height:90%;background:rgba(77,166,255,.85);"></div></div></div>
             <div class="ptemps"><div class="ptc"><div class="ptv" style="color:#4da6ff;">22°</div><div class="ptl">In</div></div><div class="ptc"><div class="ptv" style="color:#2dd4bf;">68%</div><div class="ptl">Hum</div></div><div class="ptc"><div class="ptv" style="color:#fbbf24;">18°</div><div class="ptl">Out</div></div></div>
           </div>
         </div>
@@ -491,10 +488,10 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:22
   <div class="tchips"><span class="tchip">Swift</span><span class="tchip">Flutter</span><span class="tchip">Dart</span><span class="tchip">Firebase</span><span class="tchip">Node.js</span><span class="tchip">PostgreSQL</span></div>
 </div></div>
 
-<!-- ABOUT -->
 
 <div class="div"></div>
 
+<!-- ABOUT -->
 <section id="about" style="position:relative;z-index:1;"><div class="wrap"><div class="sec">
   <div class="agrid">
     <div class="fu">
@@ -533,6 +530,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:22
 
 <div class="div"></div>
 
+<!-- APPS -->
 <section id="apps" style="position:relative;z-index:1;"><div class="wrap"><div class="sec">
   <div class="stag" data-i="apps_tag">Portfolio</div>
   <h2 class="stitle" data-i="apps_h">Apps on the Store</h2>
@@ -670,8 +668,8 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:22
 <section id="services" style="position:relative;z-index:1;"><div class="wrap"><div class="sec">
   <div class="stag" data-i="svc_tag">What I Offer</div>
   <h2 class="stitle" data-i="svc_h">Complete Development Services</h2>
-  <p class="ssub" data-i="svc_sub">From mobile apps to enterprise platforms — one developer, end-to-end solutions for startups and companies.</p>
-<div class="svc-intro">
+  <p class="ssub" data-i="svc_sub">From mobile apps to enterprise platforms — one developer, end-to-end solutions.</p>
+  <div class="svc-intro">
     <div class="svc-cat svc-cat-mobile active fu" data-cat="mobile" onclick="switchCat(this)">
       <div class="svc-cat-icon">📱</div>
       <div class="svc-cat-name" data-i="cat_mob">Mobile Development</div>
@@ -694,8 +692,8 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:22
     </div>
   </div>
 
-  <!-- MOBILE PANEL -->
   <div class="svc-panel active" id="panel-mobile">
+
     <div class="svc-items fu">
       <div class="svc-item"><div class="si-ico">🍎</div><div class="si-name" data-i="m_s1">iOS Native Development</div><p class="si-desc" data-i="m_s1d">Swift & SwiftUI apps with full App Store submission, TestFlight beta, and ongoing maintenance.</p></div>
       <div class="svc-item"><div class="si-ico">🦋</div><div class="si-name" data-i="m_s2">Flutter Cross-Platform</div><p class="si-desc" data-i="m_s2d">One codebase for iOS & Android. Pixel-perfect UI, native performance, both stores.</p></div>
@@ -705,16 +703,47 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:22
       <div class="svc-item"><div class="si-ico">🔧</div><div class="si-name" data-i="m_s6">App Maintenance</div><p class="si-desc" data-i="m_s6d">iOS version updates, bug fixes, performance improvements, and new feature additions.</p></div>
     </div>
     </div>
-  <div class="pkg-header fu"><div class="pkg-title" data-i="mob_pkg_h">Mobile App Packages</div></div>
+  <div class="pkg-header fu"><div class="pkg-title" data-i="mob_pkg_h"></div></div>
   <div class="pgr">
-    <div class="pc fu"><div class="pico">🚀</div><div class="pname" data-i="mp1">Starter App</div><div class="ptag" data-i="mp1t">Simple focused app</div><div class="pprice">$800 <span data-i="from">from</span></div><div class="pdel">⏱ 4–6 <span data-i="wks">weeks</span></div><div class="pline"></div><ul class="pfeat"><li>iOS or Flutter (one platform)</li><li data-i="mp1f2">Up to 5 screens</li><li>Firebase integration</li><li>App Store submission</li><li data-i="mp1f5">1 month support</li></ul><a href="#contact" class="pbtn g" data-i="gs">Get Started</a></div>
-    <div class="pc feat fu" style="transition-delay:.1s"><div class="pbadge" data-i="pop">Popular</div><div class="pico">⚡</div><div class="pname" data-i="mp2">Pro App</div><div class="ptag" data-i="mp2t">Full production app</div><div class="pprice">$2,200 <span data-i="from">from</span></div><div class="pdel">⏱ 8–12 <span data-i="wks">weeks</span></div><div class="pline"></div><ul class="pfeat"><li>iOS + Android (Flutter)</li><li data-i="mp2f2">Custom UI/UX design</li><li data-i="mp2f3">Backend API included</li><li>Push notifications</li><li data-i="mp2f5">3 months support</li></ul><a href="#contact" class="pbtn" data-i="gs">Get Started</a></div>
-    <div class="pc fu" style="transition-delay:.2s"><div class="pico">🏆</div><div class="pname" data-i="mp3">Enterprise</div><div class="ptag" data-i="mp3t">Complex business apps</div><div class="pprice" data-i="custom">Custom</div><div class="pdel" data-i="disc">⏱ Discussed</div><div class="pline"></div><ul class="pfeat"><li>Multi-platform + backend</li><li data-i="mp3f3">Admin dashboard</li><li data-i="mp3f4">Team management</li><li>Custom integrations</li><li data-i="mp3f5">Long-term support</li></ul><a href="#contact" class="pbtn g" data-i="lt">Let's Talk →</a></div>
+    <div class="pc fu">
+      
+      <div class="pico">🚀</div>
+      <div class="pname" data-i="mp1">Starter App</div>
+      <div class="ptag" data-i="mp1t">Simple focused app</div>
+      <div class="pprice">from $800</div>
+      <div class="pdel">⏱ 4–6 weeks</div>
+      <div class="pline"></div>
+      <ul class="pfeat"><li>iOS or Flutter (1 platform)</li><li><span data-i="mp1f2">Up to 5 screens</span></li><li>Firebase integration</li><li>App Store submission</li><li><span data-i="mp1f5">1 month support</span></li></ul>
+      <a href="#contact" class="pbtn g" data-i="gs">Get Started</a>
+    </div>
+    <div class="pc feat fu" style="transition-delay:0.1s">
+      <div class="pbadge" data-i="pop">Popular</div>
+      <div class="pico">⚡</div>
+      <div class="pname" data-i="mp2">Pro App</div>
+      <div class="ptag" data-i="mp2t">Full production app</div>
+      <div class="pprice">from $2,200</div>
+      <div class="pdel">⏱ 8–12 weeks</div>
+      <div class="pline"></div>
+      <ul class="pfeat"><li>iOS + Android (Flutter)</li><li><span data-i="mp2f2">Custom UI/UX design</span></li><li><span data-i="mp2f3">Backend API included</span></li><li>Push notifications</li><li><span data-i="mp2f5">3 months support</span></li></ul>
+      <a href="#contact" class="pbtn" data-i="gs">Get Started</a>
+    </div>
+    <div class="pc fu" style="transition-delay:0.2s">
+      
+      <div class="pico">🏆</div>
+      <div class="pname" data-i="mp3">Enterprise</div>
+      <div class="ptag" data-i="mp3t">Complex business apps</div>
+      <div class="pprice"><span data-i="custom">Custom</span></div>
+      <div class="pdel"><span data-i="disc">Discussed</span></div>
+      <div class="pline"></div>
+      <ul class="pfeat"><li>Multi-platform + backend</li><li><span data-i="mp3f3">Admin dashboard</span></li><li><span data-i="mp3f4">Team management</span></li><li>Custom integrations</li><li><span data-i="mp3f5">Long-term support</span></li></ul>
+      <a href="#contact" class="pbtn g" data-i="lt">Let's Talk →</a>
+    </div>
   </div>
   </div>
 
   <!-- WEB PANEL -->
   <div class="svc-panel" id="panel-web">
+
     <div class="svc-items fu">
       <div class="svc-item"><div class="si-ico">🎨</div><div class="si-name" data-i="w_s1">Landing Pages</div><p class="si-desc" data-i="w_s1d">High-converting, beautifully designed landing pages for products, startups, and personal brands.</p></div>
       <div class="svc-item"><div class="si-ico">💼</div><div class="si-name" data-i="w_s2">Business Websites</div><p class="si-desc" data-i="w_s2d">Multi-page professional sites with CMS, blog, portfolio sections, and Google Analytics.</p></div>
@@ -724,16 +753,47 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:22
       <div class="svc-item"><div class="si-ico">🔒</div><div class="si-name" data-i="w_s6">SSL & Security</div><p class="si-desc" data-i="w_s6d">HTTPS setup, security headers, CORS configuration, and protection against common web vulnerabilities.</p></div>
     </div>
     </div>
-  <div class="pkg-header fu"><div class="pkg-title" data-i="web_pkg_h">Web Development Packages</div></div>
+  <div class="pkg-header fu"><div class="pkg-title" data-i="web_pkg_h"></div></div>
   <div class="pgr">
-    <div class="pc fu"><div class="pico">🎨</div><div class="pname" data-i="wp1">Landing Page</div><div class="ptag" data-i="wp1t">One-page website</div><div class="pprice">$400 <span data-i="from">from</span></div><div class="pdel">⏱ 1–2 <span data-i="wks">weeks</span></div><div class="pline"></div><ul class="pfeat"><li>Responsive design</li><li>SEO optimization</li><li>Contact form</li><li data-i="wp1f4">Domain connection</li></ul><a href="#contact" class="pbtn g" data-i="gs">Get Started</a></div>
-    <div class="pc feat fu" style="transition-delay:.1s"><div class="pbadge" data-i="bv">Best Value</div><div class="pico">💼</div><div class="pname" data-i="wp2">Business Website</div><div class="ptag" data-i="wp2t">Multi-page professional</div><div class="pprice">$900 <span data-i="from">from</span></div><div class="pdel">⏱ 3–5 <span data-i="wks">weeks</span></div><div class="pline"></div><ul class="pfeat"><li data-i="wp2f1">Up to 8 pages</li><li>CMS + Blog</li><li>Google Analytics</li><li data-i="wp2f4">2 months support</li></ul><a href="#contact" class="pbtn" data-i="gs">Get Started</a></div>
-    <div class="pc fu" style="transition-delay:.2s"><div class="pico">⚙️</div><div class="pname" data-i="wp3">Web App</div><div class="ptag" data-i="wp3t">Full web application</div><div class="pprice">$2,500 <span data-i="from">from</span></div><div class="pdel">⏱ 8–14 <span data-i="wks">weeks</span></div><div class="pline"></div><ul class="pfeat"><li data-i="wp3f2">User auth & dashboard</li><li>REST API backend</li><li>Database design</li><li data-i="wp3f4">3 months support</li></ul><a href="#contact" class="pbtn g" data-i="lt">Let's Talk →</a></div>
+    <div class="pc fu">
+      
+      <div class="pico">🎨</div>
+      <div class="pname" data-i="wp1">Landing Page</div>
+      <div class="ptag" data-i="wp1t">One-page website</div>
+      <div class="pprice">from $400</div>
+      <div class="pdel">⏱ 1–2 weeks</div>
+      <div class="pline"></div>
+      <ul class="pfeat"><li>Responsive design</li><li>SEO optimization</li><li>Contact form</li><li><span data-i="wp1f4">Domain connection</span></li></ul>
+      <a href="#contact" class="pbtn g" data-i="gs">Get Started</a>
+    </div>
+    <div class="pc feat fu" style="transition-delay:0.1s">
+      <div class="pbadge" data-i="bv">Best Value</div>
+      <div class="pico">💼</div>
+      <div class="pname" data-i="wp2">Business Website</div>
+      <div class="ptag" data-i="wp2t">Multi-page professional</div>
+      <div class="pprice">from $900</div>
+      <div class="pdel">⏱ 3–5 weeks</div>
+      <div class="pline"></div>
+      <ul class="pfeat"><li><span data-i="wp2f1">Up to 8 pages</span></li><li>CMS + Blog</li><li>Google Analytics</li><li><span data-i="wp2f4">2 months support</span></li></ul>
+      <a href="#contact" class="pbtn" data-i="gs">Get Started</a>
+    </div>
+    <div class="pc fu" style="transition-delay:0.2s">
+      
+      <div class="pico">⚙️</div>
+      <div class="pname" data-i="wp3">Web App</div>
+      <div class="ptag" data-i="wp3t">Full web application</div>
+      <div class="pprice">from $2,500</div>
+      <div class="pdel">⏱ 8–14 weeks</div>
+      <div class="pline"></div>
+      <ul class="pfeat"><li><span data-i="wp3f2">User auth & dashboard</span></li><li>REST API backend</li><li>Database design</li><li><span data-i="wp3f4">3 months support</span></li></ul>
+      <a href="#contact" class="pbtn g" data-i="lt">Let's Talk →</a>
+    </div>
   </div>
   </div>
 
   <!-- FULLSTACK PANEL -->
   <div class="svc-panel" id="panel-fullstack">
+
     <div class="svc-items fu">
       <div class="svc-item"><div class="si-ico">⚙️</div><div class="si-name" data-i="fs_s1">REST API Development</div><p class="si-desc" data-i="fs_s1d">Scalable, documented REST APIs with authentication, rate limiting, and proper error handling.</p></div>
       <div class="svc-item"><div class="si-ico">🗄️</div><div class="si-name" data-i="fs_s2">Database Design</div><p class="si-desc" data-i="fs_s2d">PostgreSQL, MongoDB schema design, indexing, migrations, and performance optimization.</p></div>
@@ -743,16 +803,47 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:22
       <div class="svc-item"><div class="si-ico">📊</div><div class="si-name" data-i="fs_s6">Admin Dashboards</div><p class="si-desc" data-i="fs_s6d">Custom admin panels with analytics, user management, content control, and data visualization.</p></div>
     </div>
     </div>
-  <div class="pkg-header fu"><div class="pkg-title" data-i="fs_pkg_h">Full-Stack Packages</div></div>
+  <div class="pkg-header fu"><div class="pkg-title" data-i="fs_pkg_h"></div></div>
   <div class="pgr">
-    <div class="pc fu"><div class="pico">🔧</div><div class="pname" data-i="fp1">MVP Package</div><div class="ptag" data-i="fp1t">Idea to first launch</div><div class="pprice">$1,800 <span data-i="from">from</span></div><div class="pdel">⏱ 6–10 <span data-i="wks">weeks</span></div><div class="pline"></div><ul class="pfeat"><li>API + database</li><li>Auth system</li><li>Deployment setup</li><li data-i="fp1f4">2 months support</li></ul><a href="#contact" class="pbtn g" data-i="gs">Get Started</a></div>
-    <div class="pc feat fu" style="transition-delay:.1s"><div class="pbadge" data-i="pop">Popular</div><div class="pico">🚀</div><div class="pname" data-i="fp2">Full Product</div><div class="ptag" data-i="fp2t">Complete, one developer</div><div class="pprice">$4,000 <span data-i="from">from</span></div><div class="pdel">⏱ 12–20 <span data-i="wks">weeks</span></div><div class="pline"></div><ul class="pfeat"><li>Mobile + Web + Backend</li><li>Custom admin panel</li><li>CI/CD + cloud deploy</li><li data-i="fp2f5">6 months support</li></ul><a href="#contact" class="pbtn" data-i="gs">Get Started</a></div>
-    <div class="pc fu" style="transition-delay:.2s"><div class="pico">🔄</div><div class="pname" data-i="fp3">Retainer</div><div class="ptag" data-i="fp3t">Ongoing dev partner</div><div class="pprice">$800 <span data-i="per_mo">/ month</span></div><div class="pdel" data-i="min3">⏱ Min. 3 months</div><div class="pline"></div><ul class="pfeat"><li data-i="fp3f1">Dedicated dev hours</li><li data-i="fp3f2">Monthly new features</li><li>Bug fixes & updates</li><li data-i="fp3f4">Priority support</li></ul><a href="#contact" class="pbtn g" data-i="lt">Let's Talk →</a></div>
+    <div class="pc fu">
+      
+      <div class="pico">🔧</div>
+      <div class="pname" data-i="fp1">MVP Package</div>
+      <div class="ptag" data-i="fp1t">Idea to first launch</div>
+      <div class="pprice">from $1,800</div>
+      <div class="pdel">⏱ 6–10 weeks</div>
+      <div class="pline"></div>
+      <ul class="pfeat"><li>API + database</li><li>Auth system</li><li>Deployment setup</li><li><span data-i="fp1f4">2 months support</span></li></ul>
+      <a href="#contact" class="pbtn g" data-i="gs">Get Started</a>
+    </div>
+    <div class="pc feat fu" style="transition-delay:0.1s">
+      <div class="pbadge" data-i="pop">Popular</div>
+      <div class="pico">🚀</div>
+      <div class="pname" data-i="fp2">Full Product</div>
+      <div class="ptag" data-i="fp2t">Complete, one developer</div>
+      <div class="pprice">from $4,000</div>
+      <div class="pdel">⏱ 12–20 weeks</div>
+      <div class="pline"></div>
+      <ul class="pfeat"><li>Mobile + Web + Backend</li><li>Custom admin panel</li><li>CI/CD + cloud deploy</li><li><span data-i="fp2f5">6 months support</span></li></ul>
+      <a href="#contact" class="pbtn" data-i="gs">Get Started</a>
+    </div>
+    <div class="pc fu" style="transition-delay:0.2s">
+      
+      <div class="pico">🔄</div>
+      <div class="pname" data-i="fp3">Retainer</div>
+      <div class="ptag" data-i="fp3t">Ongoing dev partner</div>
+      <div class="pprice">$800 <span style="font-size:11px;color:var(--text-m)">/ month</span></div>
+      <div class="pdel"><span data-i="min3">Min. 3 months</span></div>
+      <div class="pline"></div>
+      <ul class="pfeat"><li><span data-i="fp3f1">Dedicated dev hours</span></li><li><span data-i="fp3f2">Monthly new features</span></li><li>Bug fixes & updates</li><li><span data-i="fp3f4">Priority support</span></li></ul>
+      <a href="#contact" class="pbtn g" data-i="lt">Let's Talk →</a>
+    </div>
   </div>
   </div>
 
   <!-- UIUX PANEL -->
   <div class="svc-panel" id="panel-uiux">
+
     <div class="svc-items fu">
       <div class="svc-item"><div class="si-ico">🏭</div><div class="si-name" data-i="c_s1">BAS/BMS Systems</div><p class="si-desc" data-i="c_s1d">Building Automation System apps for HVAC control, monitoring, alerts, and reporting — like DMT BAS/BMS.</p></div>
       <div class="svc-item"><div class="si-ico">📋</div><div class="si-name" data-i="c_s2">Document Management</div><p class="si-desc" data-i="c_s2d">Digital document creation, signing workflows, storage, and retrieval systems for field teams.</p></div>
@@ -762,11 +853,41 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:22
       <div class="svc-item"><div class="si-ico">🔗</div><div class="si-name" data-i="c_s6">System Integrations</div><p class="si-desc" data-i="c_s6d">Connect to existing hardware, sensors, third-party APIs, ERP systems, and IoT devices.</p></div>
     </div>
     </div>
-  <div class="pkg-header fu"><div class="pkg-title" data-i="uiux_pkg_h">UI/UX Design Packages</div></div>
+  <div class="pkg-header fu"><div class="pkg-title" data-i="uiux_pkg_h"></div></div>
   <div class="pgr">
-    <div class="pc fu"><div class="pico">✏️</div><div class="pname" data-i="up1">Simple Design</div><div class="ptag" data-i="up1t">Wireframes & basic UI</div><div class="pprice">$300 <span data-i="from">from</span></div><div class="pdel">⏱ 1–2 <span data-i="wks">weeks</span></div><div class="pline"></div><ul class="pfeat"><li data-i="up1f1">Up to 5 screens</li><li>Wireframes + mockups</li><li>Color & type system</li><li data-i="up1f4">Source files included</li></ul><a href="#contact" class="pbtn g" data-i="gs">Get Started</a></div>
-    <div class="pc feat fu" style="transition-delay:.1s"><div class="pbadge" data-i="pop">Popular</div><div class="pico">🎨</div><div class="pname" data-i="up2">Full UI/UX</div><div class="ptag" data-i="up2t">Complete design system</div><div class="pprice">$900 <span data-i="from">from</span></div><div class="pdel">⏱ 3–5 <span data-i="wks">weeks</span></div><div class="pline"></div><ul class="pfeat"><li data-i="up2f1">Unlimited screens</li><li>Full component library</li><li>Interactive prototype</li><li data-i="up2f4">Developer handoff</li></ul><a href="#contact" class="pbtn" data-i="gs">Get Started</a></div>
-    <div class="pc fu" style="transition-delay:.2s"><div class="pico">🔗</div><div class="pname" data-i="up3">Design + Dev</div><div class="ptag" data-i="up3t">Design & build together</div><div class="pprice" data-i="custom">Custom</div><div class="pdel" data-i="disc">⏱ Discussed</div><div class="pline"></div><ul class="pfeat"><li data-i="up3f1">Full UI/UX design</li><li>Full development</li><li>Launch & support</li><li data-i="up3f4">One seamless workflow</li></ul><a href="#contact" class="pbtn g" data-i="lt">Let's Talk →</a></div>
+    <div class="pc fu">
+      
+      <div class="pico">✏️</div>
+      <div class="pname" data-i="up1">Simple Design</div>
+      <div class="ptag" data-i="up1t">Wireframes & basic UI</div>
+      <div class="pprice">from $300</div>
+      <div class="pdel">⏱ 1–2 weeks</div>
+      <div class="pline"></div>
+      <ul class="pfeat"><li><span data-i="up1f1">Up to 5 screens</span></li><li>Wireframes + mockups</li><li>Color & type system</li><li><span data-i="up1f4">Source files included</span></li></ul>
+      <a href="#contact" class="pbtn g" data-i="gs">Get Started</a>
+    </div>
+    <div class="pc feat fu" style="transition-delay:0.1s">
+      <div class="pbadge" data-i="pop">Popular</div>
+      <div class="pico">🎨</div>
+      <div class="pname" data-i="up2">Full UI/UX</div>
+      <div class="ptag" data-i="up2t">Complete design system</div>
+      <div class="pprice">from $900</div>
+      <div class="pdel">⏱ 3–5 weeks</div>
+      <div class="pline"></div>
+      <ul class="pfeat"><li><span data-i="up2f1">Unlimited screens</span></li><li>Full component library</li><li>Interactive prototype</li><li><span data-i="up2f4">Developer handoff</span></li></ul>
+      <a href="#contact" class="pbtn" data-i="gs">Get Started</a>
+    </div>
+    <div class="pc fu" style="transition-delay:0.2s">
+      
+      <div class="pico">🔗</div>
+      <div class="pname" data-i="up3">Design + Dev</div>
+      <div class="ptag" data-i="up3t">Design & build together</div>
+      <div class="pprice"><span data-i="custom">Custom</span></div>
+      <div class="pdel"><span data-i="disc">Discussed</span></div>
+      <div class="pline"></div>
+      <ul class="pfeat"><li><span data-i="up3f1">Full UI/UX design</span></li><li>Full development</li><li>Launch & support</li><li><span data-i="up3f4">One seamless workflow</span></li></ul>
+      <a href="#contact" class="pbtn g" data-i="lt">Let's Talk →</a>
+    </div>
   </div>
   </div>
 
@@ -774,6 +895,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:22
 
 <div class="div"></div>
 
+<!-- CONTACT -->
 <section id="contact" style="position:relative;z-index:1;"><div class="wrap"><div class="sec">
   <div class="cbox fu">
     <h2 data-i="c_h">Let's work together.</h2>
