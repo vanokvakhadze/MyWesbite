@@ -1,20 +1,130 @@
 <!DOCTYPE html>
-<html lang="ka" data-theme="dark">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Apps section — preview</title>
+<title>Vano Kvakhadze — Mobile & Full-Stack Developer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#050c18;--bg2:#07111f;--bg3:#0b1a2e;--card:rgba(11,26,46,0.85);--blue:#1a6fd8;--blue-lt:#2478e8;--accent:#4da6ff;--pale:#a8d4ff;--teal:#2dd4bf;--text:#eaf0fb;--text-m:#6a8cb8;--text-d:#2e4870;--border:rgba(42,120,232,0.13);--bh:rgba(42,120,232,0.4);--shadow:0 24px 80px rgba(26,111,216,0.22);}
+:root{--bg:#050c18;--bg2:#07111f;--bg3:#0b1a2e;--card:rgba(11,26,46,0.85);--blue:#1a6fd8;--blue-lt:#2478e8;--accent:#4da6ff;--pale:#a8d4ff;--teal:#2dd4bf;--text:#eaf0fb;--text-m:#6a8cb8;--text-d:#2e4870;--border:rgba(42,120,232,0.13);--bh:rgba(42,120,232,0.4);--shadow:0 24px 80px rgba(26,111,216,0.22);--sshadow:0 8px 32px rgba(26,111,216,0.15);}
+[data-theme="light"]{--bg:#f2f6fd;--bg2:#e8eff9;--bg3:#dce7f5;--card:rgba(255,255,255,0.92);--blue:#1a6fd8;--blue-lt:#1a6fd8;--accent:#1255b8;--pale:#1a6fd8;--teal:#0d9488;--text:#09172b;--text-m:#3a5a8a;--text-d:#8aabcc;--border:rgba(26,111,216,0.13);--bh:rgba(26,111,216,0.4);}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.7;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.7;overflow-x:hidden;transition:background .4s,color .4s;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:14px 36px;display:flex;align-items:center;justify-content:space-between;background:rgba(5,12,24,0.85);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);}
+[data-theme="light"] nav{background:rgba(242,246,253,0.92);}
+.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:17px;color:var(--text);text-decoration:none;}
+.nav-logo span{color:var(--accent);}
+.nav-links{display:flex;gap:22px;list-style:none;align-items:center;}
+.nav-links a{color:var(--text-m);text-decoration:none;font-size:13px;font-weight:500;transition:color .2s;}
+.nav-links a:hover{color:var(--accent);}
+.nav-cta{padding:6px 15px;border:1px solid var(--bh);border-radius:7px;color:var(--accent)!important;}
+.nav-right{display:flex;align-items:center;gap:10px;}
+.nav-social{display:flex;gap:5px;}
+.nav-social a{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:7px;border:1px solid var(--border);color:var(--text-m);text-decoration:none;transition:all .2s;}
+.nav-social a:hover{border-color:var(--accent);color:var(--accent);}
+.lang-sw{display:flex;gap:2px;background:var(--bg3);border:1px solid var(--border);border-radius:7px;padding:2px;}
+.lang-btn{padding:3px 8px;border-radius:5px;border:none;background:transparent;color:var(--text-m);font-size:11px;font-weight:700;cursor:pointer;letter-spacing:.5px;}
+.lang-btn.active{background:var(--blue-lt);color:#fff;}
+.theme-toggle{display:flex;align-items:center;gap:6px;cursor:pointer;user-select:none;}
+.toggle-track{width:42px;height:22px;border-radius:100px;background:var(--bg3);border:1.5px solid var(--bh);position:relative;}
+.toggle-thumb{width:16px;height:16px;border-radius:50%;background:var(--text-m);position:absolute;top:2px;left:2px;transition:transform .3s;}
+[data-theme="light"] .toggle-thumb{transform:translateX(20px);background:#fff;}
+[data-theme="light"] .toggle-track{background:var(--blue-lt);}
+
+/* HERO */
+.hero-wrap{padding-top:70px;background:linear-gradient(135deg,#050c18 0%,#071830 40%,#0a1f3d 70%,#050c18 100%);}
+.hero{display:grid;grid-template-columns:1fr 400px;gap:40px;align-items:center;padding:80px 36px 90px;max-width:1200px;margin:0 auto;}
+.chip{display:inline-flex;align-items:center;gap:7px;padding:5px 13px;background:rgba(26,111,216,.1);border:1px solid rgba(26,111,216,.28);border-radius:100px;font-size:11px;color:var(--accent);font-weight:500;margin-bottom:16px;}
+.chip-dot{width:6px;height:6px;border-radius:50%;background:var(--teal);box-shadow:0 0 8px var(--teal);animation:blink 2.2s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.3;}}
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--text-m);margin-bottom:10px;}
+h1.ht{font-family:'Syne',sans-serif;font-size:clamp(44px,6vw,80px);font-weight:800;line-height:.98;letter-spacing:-3px;color:var(--text);margin-bottom:18px;}
+h1.ht em{font-style:normal;background:linear-gradient(110deg,var(--accent) 0%,var(--teal) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hdesc{font-size:16px;color:var(--text-m);max-width:440px;line-height:1.75;margin-bottom:32px;font-weight:300;}
+.hdesc strong{color:var(--pale);font-weight:500;}
+.hbtns{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:40px;}
+.bp{display:inline-flex;align-items:center;gap:7px;padding:11px 22px;background:linear-gradient(135deg,var(--blue-lt),var(--blue));color:#fff;border-radius:9px;text-decoration:none;font-weight:500;font-size:13px;box-shadow:0 4px 20px rgba(26,111,216,.4);}
+.bp:hover{transform:translateY(-2px);}
+.bs{display:inline-flex;align-items:center;padding:11px 22px;background:transparent;color:var(--text);border:1px solid var(--bh);border-radius:9px;text-decoration:none;font-weight:500;font-size:13px;}
+.bs:hover{border-color:var(--accent);color:var(--accent);}
+.hstats{display:flex;gap:36px;flex-wrap:wrap;}
+.hsn{font-family:'Syne',sans-serif;font-size:30px;font-weight:800;background:linear-gradient(135deg,var(--text),var(--pale));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hsl{font-size:11px;color:var(--text-m);margin-top:3px;}
+
+/* PHONE MOCKUP */
+.phone-scene{position:relative;width:200px;height:420px;margin:0 auto;}
+.phone-body{width:190px;height:400px;background:var(--bg3);border-radius:36px;border:2px solid rgba(255,255,255,0.1);box-shadow:0 40px 100px rgba(0,0,0,0.5);overflow:hidden;animation:flt 4s ease-in-out infinite;}
+@keyframes flt{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+.pscreen{position:absolute;inset:0;background:#071224;padding:18px 10px 10px;display:flex;flex-direction:column;}
+.pnotch{width:60px;height:14px;background:#050c18;border-radius:0 0 10px 10px;margin:0 auto 10px;}
+.ph{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;}
+.pt{font-size:9px;font-weight:700;color:#fff;font-family:'Syne',sans-serif;}
+.dlist{display:flex;flex-direction:column;gap:5px;margin-bottom:8px;}
+.drow{display:flex;align-items:center;gap:5px;padding:5px;background:rgba(255,255,255,.05);border-radius:6px;}
+.dico{width:20px;height:20px;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:9px;flex-shrink:0;}
+.dn{font-size:7px;color:rgba(255,255,255,.85);font-weight:600;}
+.ds{font-size:6px;color:rgba(255,255,255,.35);}
+.db{font-size:6px;padding:2px 4px;border-radius:3px;font-weight:700;margin-left:auto;}
+.bon{background:rgba(45,212,191,.2);color:#2dd4bf;}
+.boff{background:rgba(239,68,68,.15);color:#f87171;}
+.bwarn{background:rgba(251,191,36,.15);color:#fbbf24;}
+.pchart{background:rgba(255,255,255,.04);border-radius:6px;padding:6px;margin-bottom:6px;}
+.pcl{font-size:6px;color:rgba(255,255,255,.35);margin-bottom:3px;}
+.pbars{display:flex;gap:2px;align-items:flex-end;height:20px;}
+.pbar{flex:1;border-radius:2px 2px 0 0;}
+.ptemps{display:flex;gap:4px;}
+.ptc{flex:1;background:rgba(255,255,255,.04);border-radius:6px;padding:5px;text-align:center;}
+.ptv{font-size:11px;font-weight:700;font-family:'Syne',sans-serif;}
+.ptl{font-size:5px;color:rgba(255,255,255,.35);}
+.fb{position:absolute;background:var(--card);border:1px solid var(--bh);border-radius:9px;padding:6px 10px;font-size:9px;font-weight:600;color:var(--text);display:flex;align-items:center;gap:5px;white-space:nowrap;box-shadow:var(--sshadow);}
+.fb1{top:10px;right:-60px;animation:ff1 3.5s ease-in-out infinite;}
+.fb2{bottom:80px;left:-70px;animation:ff2 4s ease-in-out infinite;}
+.fb3{bottom:20px;right:-50px;animation:ff1 5s ease-in-out infinite 1s;}
+@keyframes ff1{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
+@keyframes ff2{0%,100%{transform:translateY(0);}50%{transform:translateY(6px);}}
+.fbd{width:5px;height:5px;border-radius:50%;}
+
+/* DIVIDER */
+.div{height:1px;background:var(--border);}
+
+/* LAYOUT */
 .wrap{max-width:1100px;margin:0 auto;padding:0 36px;}
-.sec{padding:56px 0;}
+.sec{padding:84px 0;}
+section{scroll-margin-top:70px;}
 .stag{display:inline-block;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--blue);margin-bottom:10px;}
 .stitle{font-family:'Syne',sans-serif;font-size:clamp(26px,3.5vw,40px);font-weight:800;letter-spacing:-1.5px;color:var(--text);margin-bottom:12px;line-height:1.05;}
 .ssub{font-size:14px;color:var(--text-m);max-width:480px;font-weight:300;margin-bottom:40px;}
+
+/* BAND */
+.band{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg2);padding:20px 36px;}
+.band-in{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;}
+.blbl{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-d);}
+.tchips{display:flex;gap:6px;flex-wrap:wrap;}
+.tchip{padding:3px 9px;background:var(--card);border:1px solid var(--border);border-radius:100px;font-size:10px;color:var(--text-m);}
+
+/* ABOUT */
+.agrid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+.ap{color:var(--text-m);margin-bottom:14px;font-weight:300;line-height:1.8;}
+.ap strong{color:var(--pale);font-weight:500;}
+.tl{display:flex;flex-direction:column;gap:20px;}
+.tli{display:flex;gap:12px;position:relative;}
+.tli:not(:last-child)::before{content:'';position:absolute;left:14px;top:30px;bottom:-20px;width:1px;background:linear-gradient(var(--bh),transparent);}
+.tld{width:30px;height:30px;border-radius:50%;background:var(--bg3);border:1.5px solid var(--blue-lt);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:12px;}
+.tly{font-size:9px;color:var(--blue);font-weight:700;letter-spacing:1.5px;margin-bottom:2px;}
+.tlr{font-family:'Syne',sans-serif;font-weight:700;font-size:13px;color:var(--text);margin-bottom:2px;}
+.tlde{font-size:11px;color:var(--text-m);font-weight:300;line-height:1.6;}
+
+/* SKILLS */
+.sband{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:56px 0;}
+.pills{display:flex;flex-wrap:wrap;gap:7px;margin-top:22px;}
+.pill{display:flex;align-items:center;gap:5px;padding:6px 11px;background:var(--card);border:1px solid var(--border);border-radius:100px;font-size:11px;color:var(--text-m);}
+.pd{width:4px;height:4px;border-radius:50%;background:var(--blue);}
+
+/* APPS */
 .agr{display:flex;gap:20px;overflow-x:auto;padding-bottom:16px;}
 .agr::-webkit-scrollbar{height:4px;}
 .agr::-webkit-scrollbar-thumb{background:rgba(42,120,232,0.4);border-radius:2px;}
@@ -23,8 +133,12 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;fon
 .ala{width:100%;height:160px;display:flex;align-items:center;justify-content:center;}
 .dmt-bg{background:linear-gradient(160deg,#071a2e,#0d2a45);}
 .kaya-bg{background:linear-gradient(160deg,#071830,#0d2550);}
+.mesayas-bg{background:linear-gradient(160deg,#1a0812,#30101f);}
+.app-ico{font-size:52px;}
 .app-ico-img{width:88px;height:88px;border-radius:20px;object-fit:cover;box-shadow:0 10px 30px rgba(0,0,0,.35);}
 .ph-ico{width:88px;height:88px;border-radius:20px;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:26px;letter-spacing:1px;color:rgba(255,255,255,.85);box-shadow:0 10px 30px rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.12);}
+.web-thumb{width:100%;height:160px;object-fit:cover;object-position:center;display:block;}
+.ph-thumb{width:100%;height:160px;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:22px;letter-spacing:4px;color:rgba(255,255,255,.75);background:linear-gradient(160deg,#1a0812,#30101f);}
 .ac-body{padding:20px 18px;display:flex;flex-direction:column;flex:1;}
 .acat{font-size:9px;color:var(--blue);font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:5px;}
 .aname{font-family:'Syne',sans-serif;font-size:16px;font-weight:800;color:var(--text);margin-bottom:7px;}
@@ -33,72 +147,747 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;fon
 .tag{padding:2px 7px;background:rgba(26,111,216,.1);border:1px solid rgba(26,111,216,.2);border-radius:100px;font-size:9px;color:var(--accent);font-weight:600;}
 .asb{display:inline-flex;align-items:center;gap:5px;padding:7px 11px;background:rgba(26,111,216,.1);border:1px solid var(--bh);border-radius:7px;text-decoration:none;font-size:10px;color:var(--accent);font-weight:600;align-self:flex-start;}
 .asb:hover{background:rgba(26,111,216,.2);}
-.hstats{display:flex;gap:36px;flex-wrap:wrap;padding:0 0 40px;}
-.hsn{font-family:'Syne',sans-serif;font-size:30px;font-weight:800;background:linear-gradient(135deg,var(--text),var(--pale));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.hsl{font-size:11px;color:var(--text-m);margin-top:3px;}
-.note{max-width:1100px;margin:0 auto;padding:0 36px 48px;font-size:11px;color:var(--text-d);line-height:1.8;}
-.new{outline:1px dashed rgba(45,212,191,.45);outline-offset:4px;}
-.badge{display:inline-block;margin-left:8px;padding:2px 8px;border-radius:100px;background:rgba(45,212,191,.15);color:var(--teal);font-size:9px;font-weight:700;letter-spacing:1px;vertical-align:middle;}
-@media(max-width:900px){.wrap{padding:0 18px;}.note{padding:0 18px 40px;}}
+
+/* SERVICES */
+.svc-intro{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:40px;}
+.svc-cat{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 18px;cursor:pointer;transition:all .25s;position:relative;overflow:hidden;}
+.svc-cat::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;opacity:0;transition:opacity .3s;}
+.svc-cat:hover,.svc-cat.active{border-color:var(--bh);box-shadow:var(--sshadow);}
+.svc-cat.active::before{opacity:1;}
+.svc-cat-mobile::before{background:linear-gradient(90deg,var(--blue),var(--accent));}
+.svc-cat-web::before{background:linear-gradient(90deg,var(--teal),var(--blue));}
+.svc-cat-fullstack::before{background:linear-gradient(90deg,#7c3aed,var(--blue));}
+.svc-cat-uiux::before{background:linear-gradient(90deg,#f59e0b,var(--blue));}
+.svc-cat-icon{font-size:26px;margin-bottom:10px;display:block;}
+.svc-cat-name{font-family:'Syne',sans-serif;font-size:14px;font-weight:800;color:var(--text);margin-bottom:4px;}
+.svc-cat-desc{font-size:11px;color:var(--text-m);font-weight:300;line-height:1.5;}
+.svc-panel{display:none;}
+.svc-panel.active{display:block;}
+.svc-items{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:40px;}
+.svc-item{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px 16px;transition:all .2s;}
+.svc-item:hover{border-color:var(--bh);}
+.si-ico{width:44px;height:44px;border-radius:10px;background:rgba(26,111,216,.1);border:1px solid rgba(26,111,216,.2);display:flex;align-items:center;justify-content:center;margin-bottom:12px;font-size:20px;}
+.si-name{font-family:'Syne',sans-serif;font-size:14px;font-weight:800;color:var(--text);margin-bottom:6px;}
+.si-desc{font-size:12px;color:var(--text-m);font-weight:300;line-height:1.6;}
+
+/* PRICING */
+.pkg-title{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:var(--text);margin-bottom:20px;padding-top:8px;}
+.pgr{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:48px;}
+.pc{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px 20px;display:flex;flex-direction:column;transition:all .3s;position:relative;overflow:hidden;}
+.pc:hover{border-color:var(--bh);transform:translateY(-3px);box-shadow:var(--shadow);}
+.pc.feat{border:1.5px solid var(--blue-lt);background:linear-gradient(160deg,rgba(11,26,46,0.95) 0%,rgba(26,111,216,.08) 100%);}
+.pbadge{position:absolute;top:12px;right:12px;padding:3px 10px;background:linear-gradient(135deg,var(--blue-lt),var(--blue));color:#fff;border-radius:100px;font-size:9px;font-weight:700;}
+.pico{font-size:22px;margin-bottom:10px;}
+.pname{font-family:'Syne',sans-serif;font-size:16px;font-weight:800;color:var(--text);margin-bottom:2px;}
+.ptag{font-size:11px;color:var(--text-m);font-weight:300;margin-bottom:14px;}
+.pprice{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;color:var(--accent);line-height:1;margin-bottom:4px;}
+.pprice small{font-size:12px;color:var(--text-m);font-weight:400;}
+.pdel{font-size:10px;color:var(--text-m);margin-bottom:14px;}
+.pline{height:1px;background:var(--border);margin-bottom:14px;}
+.pfeat{list-style:none;display:flex;flex-direction:column;gap:8px;flex:1;margin-bottom:18px;}
+.pfeat li{display:flex;align-items:flex-start;gap:7px;font-size:11px;color:var(--text-m);font-weight:300;line-height:1.5;}
+.pfeat li::before{content:'✓';color:var(--teal);font-weight:700;flex-shrink:0;margin-top:1px;}
+.pbtn{display:block;text-align:center;padding:10px;background:linear-gradient(135deg,var(--blue-lt),var(--blue));color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:12px;transition:all .25s;}
+.pbtn:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(26,111,216,.45);}
+.pbtn.outline{background:transparent;color:var(--text);border:1px solid var(--bh);}
+.pbtn.outline:hover{border-color:var(--accent);color:var(--accent);}
+
+/* CONTACT */
+.cbox{background:var(--card);border:1px solid var(--bh);border-radius:20px;padding:56px 48px;text-align:center;position:relative;overflow:hidden;}
+.cbox::before{content:'';position:absolute;top:-40%;left:50%;transform:translateX(-50%);width:440px;height:340px;background:radial-gradient(ellipse,rgba(26,111,216,0.18) 0%,transparent 70%);pointer-events:none;}
+.cbox h2{font-family:'Syne',sans-serif;font-size:34px;font-weight:800;letter-spacing:-1.5px;color:var(--text);margin-bottom:10px;position:relative;z-index:1;}
+.cbox p{color:var(--text-m);font-size:14px;font-weight:300;margin-bottom:28px;max-width:340px;margin-left:auto;margin-right:auto;position:relative;z-index:1;}
+.clinks{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;}
+.cl{display:inline-flex;align-items:center;gap:7px;padding:10px 20px;background:linear-gradient(135deg,var(--blue-lt),var(--blue));color:#fff;border-radius:9px;text-decoration:none;font-weight:500;font-size:13px;box-shadow:0 4px 18px rgba(26,111,216,.35);}
+.cl:hover{transform:translateY(-2px);}
+.clg{display:inline-flex;align-items:center;gap:7px;padding:10px 20px;background:transparent;color:var(--text);border:1px solid var(--bh);border-radius:9px;text-decoration:none;font-weight:500;font-size:13px;}
+.clg:hover{border-color:var(--accent);color:var(--accent);}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:22px 36px;display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;}
+.fl{font-family:'Syne',sans-serif;font-weight:800;font-size:14px;color:var(--text-m);}
+.fl span{color:var(--accent);}
+.fr{display:flex;align-items:center;gap:12px;}
+.fc{font-size:11px;color:var(--text-d);}
+.fsoc{display:flex;gap:5px;}
+.fsoc a{display:flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:6px;border:1px solid var(--border);color:var(--text-m);text-decoration:none;transition:all .2s;}
+.fsoc a:hover{border-color:var(--accent);color:var(--accent);}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav{padding:12px 18px;}
+  .nav-links{display:none;}
+  .hero{grid-template-columns:1fr;padding:80px 20px 56px;}
+  .phone-scene{display:none;}
+  .wrap{padding:0 18px;}
+  .agrid,.pgr,.svc-items,.svc-intro{grid-template-columns:1fr;}
+  .cbox{padding:32px 18px;}
+  footer{flex-direction:column;gap:8px;text-align:center;padding:16px;}
+}
 </style>
 </head>
-<body>
+<body data-lang="en">
 
-<div class="wrap"><div class="sec">
-  <div class="hstats">
-    <div><div class="hsn">3</div><div class="hsl">Apps on the App Store</div></div>
-    <div><div class="hsn">3+</div><div class="hsl">Years Mobile Dev</div></div>
-    <div><div class="hsn">&#8734;</div><div class="hsl">Lines of Code</div></div>
+<nav>
+  <a class="nav-logo" href="#">VK<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#about" data-i="nav_about">About</a></li>
+    <li><a href="#apps" data-i="nav_apps">Apps</a></li>
+    <li><a href="#websites" data-i="nav_web">Websites</a></li>
+    <li><a href="#services" data-i="nav_svc">Services</a></li>
+    <li><a href="#contact" class="nav-cta" data-i="nav_cta">Let's Talk</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-sw">
+      <button class="lang-btn active" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="ka">KA</button>
+    </div>
+    <div class="nav-social">
+      <a href="https://github.com/vanokvakhadze" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg></a>
+      <a href="https://www.linkedin.com/in/vano-kvakhadze-0b9002267/" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+    </div>
+    <div class="theme-toggle" id="themeBtn">
+      <span>🌙</span>
+      <div class="toggle-track"><div class="toggle-thumb"></div></div>
+      <span>☀️</span>
+    </div>
   </div>
+</nav>
 
-  <div class="stag">Portfolio</div>
-  <h2 class="stitle">Apps on the Store</h2>
-  <p class="ssub">3 live applications &mdash; built from scratch, design to deployment.</p>
-
-  <div class="agr">
-    <div class="ac">
-      <div class="ala dmt-bg"><div class="ph-ico" style="background:linear-gradient(150deg,#123a5e,#0a1f33);">SZ</div></div>
-      <div class="ac-body">
-        <div class="acat">Productivity &middot; Enterprise</div>
-        <div class="aname">Sazeo</div>
-        <p class="adesc">Professional HVAC system management for technicians. Control devices, manage documents, report and resolve issues &mdash; all in one place.</p>
-        <div class="atags"><span class="tag">HVAC</span><span class="tag">BAS/BMS</span><span class="tag">Flutter</span></div>
-        <div style="display:flex;gap:6px;flex-wrap:wrap;">
-          <a href="https://apps.apple.com/ge/app/sazeo/id6746461321" target="_blank" rel="noopener" class="asb">&#127822; App Store &rarr;</a>
-          <a href="https://play.google.com/store/apps/details?id=com.dmt.ge" target="_blank" rel="noopener" class="asb">&#9654; Google Play &rarr;</a>
+<!-- HERO -->
+<div class="hero-wrap">
+<div class="hero">
+  <div class="hero-left">
+    <div class="chip"><span class="chip-dot"></span><span data-i="status">Available for new projects</span></div>
+    <div class="eyebrow" data-i="eyebrow">Flutter Developer · iOS & Mobile Apps</div>
+    <h1 class="ht">Vano<br><em>Kvakhadze</em></h1>
+    <p class="hdesc" data-i="hdesc">Flutter Developer open to <strong>full-time, remote & freelance</strong> opportunities. I build production-ready mobile apps with clean architecture.</p>
+    <div class="hbtns">
+      <a href="#apps" class="bp" data-i="btn_apps">View My Apps</a>
+      <a href="#services" class="bs" data-i="btn_svc">Services & Pricing →</a>
+    </div>
+    <div class="hstats">
+      <div><div class="hsn">3</div><div class="hsl" data-i="st1">Apps on the App Store</div></div>
+      <div><div class="hsn">3+</div><div class="hsl" data-i="st2">Years Mobile Dev</div></div>
+      <div><div class="hsn">∞</div><div class="hsl" data-i="st3">Lines of Code</div></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="phone-scene">
+      <div class="fb fb1"><div class="fbd" style="background:#2dd4bf;box-shadow:0 0 6px #2dd4bf;"></div><span data-i="fb1">3 Devices Online</span></div>
+      <div class="fb fb2"><div class="fbd" style="background:#4da6ff;box-shadow:0 0 6px #4da6ff;"></div>Flutter · iOS</div>
+      <div class="fb fb3"><div class="fbd" style="background:#fbbf24;box-shadow:0 0 6px #fbbf24;"></div><span data-i="fb3">1 Alert</span></div>
+      <div class="phone-body">
+        <div class="pscreen">
+          <div class="pnotch"></div>
+          <div class="ph"><div class="pt">Sazeo</div><div style="width:14px;height:14px;border-radius:4px;background:rgba(45,212,191,.2);display:flex;align-items:center;justify-content:center;"><svg width="6" height="6" viewBox="0 0 24 24" fill="#2dd4bf"><circle cx="12" cy="12" r="10"/></svg></div></div>
+          <div class="dlist">
+            <div class="drow"><div class="dico" style="background:rgba(42,120,232,.2);">❄️</div><div><div class="dn">AHU-01</div><div class="ds">Air Handling</div></div><div class="db bon">ON</div></div>
+            <div class="drow"><div class="dico" style="background:rgba(251,191,36,.15);">🔥</div><div><div class="dn">FCU-03</div><div class="ds">Fan Coil</div></div><div class="db bwarn">⚠</div></div>
+            <div class="drow"><div class="dico" style="background:rgba(239,68,68,.15);">💨</div><div><div class="dn">VAV-07</div><div class="ds">Variable Air</div></div><div class="db boff">OFF</div></div>
+          </div>
+          <div class="pchart"><div class="pcl">Energy (kWh)</div><div class="pbars"><div class="pbar" style="height:40%;background:rgba(42,120,232,.5);"></div><div class="pbar" style="height:65%;background:rgba(42,120,232,.6);"></div><div class="pbar" style="height:50%;background:rgba(42,120,232,.5);"></div><div class="pbar" style="height:80%;background:rgba(42,120,232,.7);"></div><div class="pbar" style="height:60%;background:rgba(42,120,232,.6);"></div><div class="pbar" style="height:90%;background:rgba(77,166,255,.85);"></div></div></div>
+          <div class="ptemps"><div class="ptc"><div class="ptv" style="color:#4da6ff;">22°</div><div class="ptl">In</div></div><div class="ptc"><div class="ptv" style="color:#2dd4bf;">68%</div><div class="ptl">Hum</div></div><div class="ptc"><div class="ptv" style="color:#fbbf24;">18°</div><div class="ptl">Out</div></div></div>
         </div>
       </div>
     </div>
+  </div>
+</div>
+</div>
 
-    <div class="ac">
-      <div class="ala kaya-bg"><div class="ph-ico" style="background:linear-gradient(150deg,#16305c,#0a1730);">K</div></div>
-      <div class="ac-body">
-        <div class="acat">Lifestyle &middot; Engineering</div>
-        <div class="aname">K | A | Y | A</div>
-        <p class="adesc">HVAC engineering calculator &mdash; compute water energy, air duct mass flow, and other key HVAC parameters quickly and accurately.</p>
-        <div class="atags"><span class="tag">iOS</span><span class="tag">Swift</span><span class="tag">HVAC</span></div>
-        <a href="https://apps.apple.com/ge/app/k-a-y-a/id6749541396" target="_blank" rel="noopener" class="asb">&#127822; App Store &rarr;</a>
+<!-- BAND -->
+<div class="band">
+  <div class="band-in">
+    <div class="blbl" data-i="built">Built with</div>
+    <div class="tchips">
+      <span class="tchip">Swift</span><span class="tchip">Flutter</span><span class="tchip">Dart</span><span class="tchip">Firebase</span><span class="tchip">Node.js</span><span class="tchip">PostgreSQL</span><span class="tchip">React</span><span class="tchip">AWS</span>
+    </div>
+  </div>
+</div>
+
+<div class="div"></div>
+
+<!-- ABOUT -->
+<section id="about">
+<div class="wrap"><div class="sec">
+  <div class="agrid">
+    <div>
+      <div class="stag" data-i="about_tag">About Me</div>
+      <h2 class="stitle" data-i="about_h">From idea to<br>working product</h2>
+      <p class="ap" data-i="ap1">I'm Vano — a mobile & full-stack developer based in Georgia 🇬🇪. Started with <strong>native iOS development</strong>, building real-world apps that help businesses work smarter.</p>
+      <p class="ap" data-i="ap2">After 2 years of Swift, expanded into <strong>Flutter</strong> for cross-platform reach. Now offering a <strong>complete service</strong> — mobile apps, backend APIs, and full web platforms.</p>
+      <p class="ap" data-i="ap3">Work spans <strong>HVAC system management</strong>, location tracking, productivity tools — always with clean architecture and great UX.</p>
+      <div style="display:flex;gap:7px;margin-top:18px;flex-wrap:wrap;">
+        <a href="https://github.com/vanokvakhadze" target="_blank" class="clg" style="font-size:11px;padding:7px 14px;">GitHub</a>
+        <a href="https://www.linkedin.com/in/vano-kvakhadze-0b9002267/" target="_blank" class="clg" style="font-size:11px;padding:7px 14px;">LinkedIn</a>
       </div>
     </div>
-
-    <div class="ac new">
-      <div class="ala" style="background:linear-gradient(160deg,#1a0812,#30101f);"><img class="app-ico-img" src="data:image/jpeg;base64,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" alt="Mesayas"></div>
-      <div class="ac-body">
-        <div class="acat">Esoteric &middot; Lifestyle<span class="badge">NEW</span></div>
-        <div class="aname">Mesayas</div>
-        <p class="adesc">Shop for handmade talismans, crystals and ritual kits with saved favorites. Tarot, astrology, coffee and dream readings in clear, separate tabs &mdash; with smooth onboarding and a refreshed look.</p>
-        <div class="atags"><span class="tag">Tarot</span><span class="tag">Flutter</span><span class="tag">Shop</span></div>
-        <div style="display:flex;gap:6px;flex-wrap:wrap;">
-          <a href="https://play.google.com/store/apps/details?id=com.mesayas" target="_blank" rel="noopener" class="asb">&#9654; Google Play &rarr;</a>
-        </div>
+    <div>
+      <div class="tl">
+        <div class="tli"><div class="tld">🚀</div><div><div class="tly">2023 — PRESENT</div><div class="tlr" data-i="tl1r">Flutter Developer</div><div class="tlde" data-i="tl1d">Cross-platform mobile apps + expanding to full-stack web & backend.</div></div></div>
+        <div class="tli"><div class="tld">📱</div><div><div class="tly">2021 — 2023</div><div class="tlr" data-i="tl2r">iOS Developer</div><div class="tlde" data-i="tl2d">2 years native iOS with Swift. Published apps on the App Store.</div></div></div>
+        <div class="tli"><div class="tld">💡</div><div><div class="tly" data-i="tl3y">THE BEGINNING</div><div class="tlr" data-i="tl3r">First Lines of Code</div><div class="tlde" data-i="tl3d">Fell in love with building things. Never stopped since.</div></div></div>
       </div>
     </div>
   </div>
 </div></div>
+</section>
 
-<div class="note">
-  &#10033; Sazeo-&#4321;&#4304; &#4307;&#4304; K|A|Y|A-&#4321; &#4304;&#4315; &#4318;&#4320;&#4308;&#4309;&#4323;&#4321; &#4308;&#4321;&#4331;&#4308;&#4305;&#4304; &#4321;&#4304;&#4315;&#4304;&#4306;&#4312;&#4308;&#4320;&#4317; &#4318;&#4314;&#4308;&#4312;&#4321;&#4336;&#4317;&#4314;&#4307;&#4308;&#4320;&#4308;&#4305;&#4312; &#4304;&#4325;&#4309;&#4321; &#4311;&#4304;&#4309;&#4312;&#4321;&#4312; &#4314;&#4317;&#4306;&#4317;&#4308;&#4305;&#4312;&#4321; &#4315;&#4304;&#4322;&#4312;&#4308;&#4320;. Mesayas-&#4312;&#4321; &#4314;&#4317;&#4306;&#4317; &#4318;&#4318;&#4308;&#4304;&#4314;&#4323;&#4320;&#4312;&#4304;.
+<!-- SKILLS -->
+<div class="sband">
+<div class="wrap">
+  <div class="stag" data-i="sk_tag">Tech Stack</div>
+  <h2 class="stitle" data-i="sk_h">Tools I work with</h2>
+  <div class="pills">
+    <div class="pill"><span class="pd"></span>Swift</div><div class="pill"><span class="pd"></span>Flutter</div><div class="pill"><span class="pd"></span>Dart</div><div class="pill"><span class="pd"></span>SwiftUI</div><div class="pill"><span class="pd"></span>UIKit</div><div class="pill"><span class="pd"></span>Firebase</div><div class="pill"><span class="pd"></span>REST APIs</div><div class="pill"><span class="pd"></span>Node.js</div><div class="pill"><span class="pd"></span>Express.js</div><div class="pill"><span class="pd"></span>PostgreSQL</div><div class="pill"><span class="pd"></span>MongoDB</div><div class="pill"><span class="pd"></span>React</div><div class="pill"><span class="pd"></span>Next.js</div><div class="pill"><span class="pd"></span>Docker</div><div class="pill"><span class="pd"></span>AWS</div><div class="pill"><span class="pd"></span>Figma</div>
+  </div>
+</div>
 </div>
 
+<div class="div"></div>
+
+<!-- APPS -->
+<section id="apps">
+<div class="wrap"><div class="sec">
+  <div class="stag" data-i="apps_tag">Portfolio</div>
+  <h2 class="stitle" data-i="apps_h">Apps on the Store</h2>
+  <p class="ssub" data-i="apps_sub">3 live applications — built from scratch, design to deployment.</p>
+  <div class="agr">
+    <div class="ac">
+      <div class="ala dmt-bg"><div class="ph-ico" style="background:linear-gradient(150deg,#123a5e,#0a1f33);">SZ</div></div>
+      <div class="ac-body">
+        <div class="acat">Productivity · Enterprise</div>
+        <div class="aname">Sazeo</div>
+        <p class="adesc" data-i="dmt_d">Professional HVAC system management for technicians. Control devices, manage documents, report and resolve issues — all in one place.</p>
+        <div class="atags"><span class="tag">HVAC</span><span class="tag">BAS/BMS</span><span class="tag">Flutter</span></div>
+        <a href="https://apps.apple.com/ge/app/dmt-bas-bms/id6746461321" target="_blank" class="asb">🍎 App Store →</a>
+      </div>
+    </div>
+    <div class="ac">
+      <div class="ala kaya-bg"><div class="ph-ico" style="background:linear-gradient(150deg,#16305c,#0a1730);">K</div></div>
+      <div class="ac-body">
+        <div class="acat">Lifestyle · Engineering</div>
+        <div class="aname">K | A | Y | A</div>
+        <p class="adesc" data-i="kaya_d">HVAC engineering calculator — compute water energy, air duct mass flow, and other key HVAC parameters quickly and accurately.</p>
+        <div class="atags"><span class="tag">iOS</span><span class="tag">Swift</span><span class="tag">HVAC</span></div>
+        <a href="https://apps.apple.com/ge/app/k-a-y-a/id6749541396" target="_blank" class="asb">🍎 App Store →</a>
+      </div>
+    </div>
+    <div class="ac">
+      <div class="ala mesayas-bg"><img class="app-ico-img" src="data:image/jpeg;base64,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" alt="Mesayas"></div>
+      <div class="ac-body">
+        <div class="acat">Esoteric · Lifestyle</div>
+        <div class="aname">Mesayas</div>
+        <p class="adesc" data-i="mesayas_app_d">Shop for handmade talismans, crystals and ritual kits with saved favorites. Tarot, astrology, coffee and dream readings in clear, separate tabs — with smooth onboarding and a refreshed look.</p>
+        <div class="atags"><span class="tag">Tarot</span><span class="tag">Flutter</span><span class="tag">Shop</span></div>
+        <a href="APP_STORE_LINK_HERE" target="_blank" class="asb">🍎 App Store →</a>
+      </div>
+    </div>
+  </div>
+</div></div>
+</section>
+
+<div class="div"></div>
+
+<!-- WEBSITES -->
+<section id="websites">
+<div class="wrap"><div class="sec">
+  <div class="stag" data-i="web_tag">Live Websites</div>
+  <h2 class="stitle" data-i="web_h">Websites in Production</h2>
+  <p class="ssub" data-i="web_sub">Real client sites — design, build, and deployment, end to end.</p>
+  <div class="agr">
+    <div class="ac">
+      <div class="ph-thumb">MESAYAS.COM</div>
+      <div class="ac-body">
+        <div class="acat">Esoteric · Web Platform</div>
+        <div class="aname">Mesayas</div>
+        <p class="adesc" data-i="mesayas_d">Esoteric practice platform — tarot readings, moon calendar, wheel of the year, and handcrafted charms. Bilingual, SEO-optimized, with a moody celestial design.</p>
+        <div class="atags"><span class="tag">Web</span><span class="tag">SEO</span><span class="tag">GE / EN</span></div>
+        <a href="https://mesayas.com" target="_blank" class="asb" data-i="visit">🌐 Visit Site →</a>
+      </div>
+    </div>
+  </div>
+</div></div>
+</section>
+
+<div class="div"></div>
+
+<!-- SERVICES -->
+<section id="services">
+<div class="wrap"><div class="sec">
+  <div class="stag" data-i="svc_tag">What I Offer</div>
+  <h2 class="stitle" data-i="svc_h">Complete Development Services</h2>
+  <p class="ssub" data-i="svc_sub">From mobile apps to enterprise platforms — one developer, end-to-end solutions.</p>
+
+  <div class="svc-intro">
+    <div class="svc-cat svc-cat-mobile active" data-cat="mobile" onclick="switchCat(this)">
+      <span class="svc-cat-icon">📱</span>
+      <div class="svc-cat-name" data-i="cat_mob">Mobile</div>
+      <div class="svc-cat-desc" data-i="cat_mob_d">iOS & Flutter apps</div>
+    </div>
+    <div class="svc-cat svc-cat-web" data-cat="web" onclick="switchCat(this)">
+      <span class="svc-cat-icon">🌐</span>
+      <div class="svc-cat-name" data-i="cat_web">Web</div>
+      <div class="svc-cat-desc" data-i="cat_web_d">Sites & web apps</div>
+    </div>
+    <div class="svc-cat svc-cat-fullstack" data-cat="fullstack" onclick="switchCat(this)">
+      <span class="svc-cat-icon">⚡</span>
+      <div class="svc-cat-name" data-i="cat_fs">Full-Stack</div>
+      <div class="svc-cat-desc" data-i="cat_fs_d">APIs & backend</div>
+    </div>
+    <div class="svc-cat svc-cat-uiux" data-cat="uiux" onclick="switchCat(this)">
+      <span class="svc-cat-icon">🎨</span>
+      <div class="svc-cat-name" data-i="cat_uiux">UI/UX</div>
+      <div class="svc-cat-desc" data-i="cat_uiux_d">Design systems</div>
+    </div>
+  </div>
+
+  <!-- MOBILE -->
+  <div class="svc-panel active" id="panel-mobile">
+    <div class="svc-items">
+      <div class="svc-item"><div class="si-ico">🍎</div><div class="si-name" data-i="m_s1">iOS Native</div><p class="si-desc" data-i="m_s1d">Swift & SwiftUI apps with full App Store submission and TestFlight beta.</p></div>
+      <div class="svc-item"><div class="si-ico">🦋</div><div class="si-name" data-i="m_s2">Flutter Cross-Platform</div><p class="si-desc" data-i="m_s2d">One codebase for iOS & Android. Pixel-perfect UI, native performance.</p></div>
+      <div class="svc-item"><div class="si-ico">🎨</div><div class="si-name" data-i="m_s3">UI/UX Design</div><p class="si-desc" data-i="m_s3d">App wireframes, design systems, and polished interfaces in Figma.</p></div>
+      <div class="svc-item"><div class="si-ico">🔔</div><div class="si-name" data-i="m_s4">Push Notifications</div><p class="si-desc" data-i="m_s4d">Firebase Cloud Messaging or APNs for real-time notifications.</p></div>
+      <div class="svc-item"><div class="si-ico">💳</div><div class="si-name" data-i="m_s5">In-App Purchases</div><p class="si-desc" data-i="m_s5d">Subscriptions, one-time purchases, Stripe & Apple Pay integration.</p></div>
+      <div class="svc-item"><div class="si-ico">🔧</div><div class="si-name" data-i="m_s6">Maintenance</div><p class="si-desc" data-i="m_s6d">iOS version updates, bug fixes, and new feature additions.</p></div>
+    </div>
+    <div class="pkg-title" data-i="mob_pkg_h">Mobile App Packages</div>
+    <div class="pgr">
+      <div class="pc">
+        <div class="pico">🚀</div>
+        <div class="pname" data-i="mp1">Starter App</div>
+        <div class="ptag" data-i="mp1t">Simple focused app</div>
+        <div class="pprice">$800 <small>from</small></div>
+        <div class="pdel">⏱ 4–6 weeks</div>
+        <div class="pline"></div>
+        <ul class="pfeat">
+          <li>iOS or Flutter (1 platform)</li>
+          <li data-i="mp1f2">Up to 5 screens</li>
+          <li>Firebase integration</li>
+          <li>App Store submission</li>
+          <li data-i="mp1f5">1 month support</li>
+        </ul>
+        <a href="#contact" class="pbtn outline" data-i="gs">Get Started</a>
+      </div>
+      <div class="pc feat">
+        <div class="pbadge" data-i="pop">Popular</div>
+        <div class="pico">⚡</div>
+        <div class="pname" data-i="mp2">Pro App</div>
+        <div class="ptag" data-i="mp2t">Full production app</div>
+        <div class="pprice">$2,200 <small>from</small></div>
+        <div class="pdel">⏱ 8–12 weeks</div>
+        <div class="pline"></div>
+        <ul class="pfeat">
+          <li>iOS + Android (Flutter)</li>
+          <li data-i="mp2f2">Custom UI/UX design</li>
+          <li data-i="mp2f3">Backend API included</li>
+          <li>Push notifications</li>
+          <li data-i="mp2f5">3 months support</li>
+        </ul>
+        <a href="#contact" class="pbtn" data-i="gs">Get Started</a>
+      </div>
+      <div class="pc">
+        <div class="pico">🏆</div>
+        <div class="pname" data-i="mp3">Enterprise</div>
+        <div class="ptag" data-i="mp3t">Complex business apps</div>
+        <div class="pprice" data-i="custom">Custom</div>
+        <div class="pdel" data-i="disc">⏱ Discussed</div>
+        <div class="pline"></div>
+        <ul class="pfeat">
+          <li>Multi-platform + backend</li>
+          <li data-i="mp3f3">Admin dashboard</li>
+          <li data-i="mp3f4">Team management</li>
+          <li>Custom integrations</li>
+          <li data-i="mp3f5">Long-term support</li>
+        </ul>
+        <a href="#contact" class="pbtn outline" data-i="lt">Let's Talk →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEB -->
+  <div class="svc-panel" id="panel-web">
+    <div class="svc-items">
+      <div class="svc-item"><div class="si-ico">🎨</div><div class="si-name" data-i="w_s1">Landing Pages</div><p class="si-desc" data-i="w_s1d">High-converting landing pages for products, startups, and personal brands.</p></div>
+      <div class="svc-item"><div class="si-ico">💼</div><div class="si-name" data-i="w_s2">Business Websites</div><p class="si-desc" data-i="w_s2d">Multi-page professional sites with CMS, blog, and Google Analytics.</p></div>
+      <div class="svc-item"><div class="si-ico">🛒</div><div class="si-name" data-i="w_s3">E-Commerce</div><p class="si-desc" data-i="w_s3d">Online stores with payment integration and order tracking systems.</p></div>
+      <div class="svc-item"><div class="si-ico">⚡</div><div class="si-name" data-i="w_s4">Web Applications</div><p class="si-desc" data-i="w_s4d">Dashboards, SaaS tools, and data-driven web apps with user auth.</p></div>
+      <div class="svc-item"><div class="si-ico">🔍</div><div class="si-name" data-i="w_s5">SEO & Performance</div><p class="si-desc" data-i="w_s5d">Core Web Vitals optimization, meta tags, and speed improvements.</p></div>
+      <div class="svc-item"><div class="si-ico">🔒</div><div class="si-name" data-i="w_s6">SSL & Security</div><p class="si-desc" data-i="w_s6d">HTTPS setup, security headers, and protection against vulnerabilities.</p></div>
+    </div>
+    <div class="pkg-title" data-i="web_pkg_h">Web Development Packages</div>
+    <div class="pgr">
+      <div class="pc">
+        <div class="pico">🎨</div>
+        <div class="pname" data-i="wp1">Landing Page</div>
+        <div class="ptag" data-i="wp1t">One-page website</div>
+        <div class="pprice">$400 <small>from</small></div>
+        <div class="pdel">⏱ 1–2 weeks</div>
+        <div class="pline"></div>
+        <ul class="pfeat">
+          <li>Responsive design</li>
+          <li>SEO optimization</li>
+          <li>Contact form</li>
+          <li data-i="wp1f4">Domain connection</li>
+        </ul>
+        <a href="#contact" class="pbtn outline" data-i="gs">Get Started</a>
+      </div>
+      <div class="pc feat">
+        <div class="pbadge" data-i="bv">Best Value</div>
+        <div class="pico">💼</div>
+        <div class="pname" data-i="wp2">Business Website</div>
+        <div class="ptag" data-i="wp2t">Multi-page professional</div>
+        <div class="pprice">$900 <small>from</small></div>
+        <div class="pdel">⏱ 3–5 weeks</div>
+        <div class="pline"></div>
+        <ul class="pfeat">
+          <li data-i="wp2f1">Up to 8 pages</li>
+          <li>CMS + Blog</li>
+          <li>Google Analytics</li>
+          <li data-i="wp2f4">2 months support</li>
+        </ul>
+        <a href="#contact" class="pbtn" data-i="gs">Get Started</a>
+      </div>
+      <div class="pc">
+        <div class="pico">⚙️</div>
+        <div class="pname" data-i="wp3">Web App</div>
+        <div class="ptag" data-i="wp3t">Full web application</div>
+        <div class="pprice">$2,500 <small>from</small></div>
+        <div class="pdel">⏱ 8–14 weeks</div>
+        <div class="pline"></div>
+        <ul class="pfeat">
+          <li data-i="wp3f2">User auth & dashboard</li>
+          <li>REST API backend</li>
+          <li>Database design</li>
+          <li data-i="wp3f4">3 months support</li>
+        </ul>
+        <a href="#contact" class="pbtn outline" data-i="lt">Let's Talk →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FULLSTACK -->
+  <div class="svc-panel" id="panel-fullstack">
+    <div class="svc-items">
+      <div class="svc-item"><div class="si-ico">⚙️</div><div class="si-name" data-i="fs_s1">REST API</div><p class="si-desc" data-i="fs_s1d">Scalable, documented REST APIs with auth, rate limiting, and error handling.</p></div>
+      <div class="svc-item"><div class="si-ico">🗄️</div><div class="si-name" data-i="fs_s2">Database Design</div><p class="si-desc" data-i="fs_s2d">PostgreSQL, MongoDB schema design, indexing, and performance optimization.</p></div>
+      <div class="svc-item"><div class="si-ico">🔐</div><div class="si-name" data-i="fs_s3">Auth & Security</div><p class="si-desc" data-i="fs_s3d">JWT, OAuth2, role-based access control, and security best practices.</p></div>
+      <div class="svc-item"><div class="si-ico">☁️</div><div class="si-name" data-i="fs_s4">Cloud & DevOps</div><p class="si-desc" data-i="fs_s4d">AWS, Firebase, VPS, Docker containers, CI/CD pipelines, and monitoring.</p></div>
+      <div class="svc-item"><div class="si-ico">⚡</div><div class="si-name" data-i="fs_s5">Real-Time</div><p class="si-desc" data-i="fs_s5d">WebSocket, live notifications, chat systems, and real-time data sync.</p></div>
+      <div class="svc-item"><div class="si-ico">📊</div><div class="si-name" data-i="fs_s6">Admin Dashboards</div><p class="si-desc" data-i="fs_s6d">Custom admin panels with analytics, user management, and data visualization.</p></div>
+    </div>
+    <div class="pkg-title" data-i="fs_pkg_h">Full-Stack Packages</div>
+    <div class="pgr">
+      <div class="pc">
+        <div class="pico">🔧</div>
+        <div class="pname" data-i="fp1">MVP Package</div>
+        <div class="ptag" data-i="fp1t">Idea to first launch</div>
+        <div class="pprice">$1,800 <small>from</small></div>
+        <div class="pdel">⏱ 6–10 weeks</div>
+        <div class="pline"></div>
+        <ul class="pfeat">
+          <li>API + database</li>
+          <li>Auth system</li>
+          <li>Deployment setup</li>
+          <li data-i="fp1f4">2 months support</li>
+        </ul>
+        <a href="#contact" class="pbtn outline" data-i="gs">Get Started</a>
+      </div>
+      <div class="pc feat">
+        <div class="pbadge" data-i="pop">Popular</div>
+        <div class="pico">🚀</div>
+        <div class="pname" data-i="fp2">Full Product</div>
+        <div class="ptag" data-i="fp2t">Complete solution</div>
+        <div class="pprice">$4,000 <small>from</small></div>
+        <div class="pdel">⏱ 12–20 weeks</div>
+        <div class="pline"></div>
+        <ul class="pfeat">
+          <li>Mobile + Web + Backend</li>
+          <li>Custom admin panel</li>
+          <li>CI/CD + cloud deploy</li>
+          <li data-i="fp2f5">6 months support</li>
+        </ul>
+        <a href="#contact" class="pbtn" data-i="gs">Get Started</a>
+      </div>
+      <div class="pc">
+        <div class="pico">🔄</div>
+        <div class="pname" data-i="fp3">Retainer</div>
+        <div class="ptag" data-i="fp3t">Ongoing dev partner</div>
+        <div class="pprice">$800 <small>/ month</small></div>
+        <div class="pdel" data-i="min3">⏱ Min. 3 months</div>
+        <div class="pline"></div>
+        <ul class="pfeat">
+          <li data-i="fp3f1">Dedicated dev hours</li>
+          <li data-i="fp3f2">Monthly new features</li>
+          <li>Bug fixes & updates</li>
+          <li data-i="fp3f4">Priority support</li>
+        </ul>
+        <a href="#contact" class="pbtn outline" data-i="lt">Let's Talk →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- UIUX -->
+  <div class="svc-panel" id="panel-uiux">
+    <div class="svc-items">
+      <div class="svc-item"><div class="si-ico">🏭</div><div class="si-name" data-i="u_s1">Wireframing</div><p class="si-desc" data-i="u_s1d">Low and high-fidelity wireframes mapping the full user journey.</p></div>
+      <div class="svc-item"><div class="si-ico">🖌️</div><div class="si-name" data-i="u_s2">Visual Design</div><p class="si-desc" data-i="u_s2d">Polished, pixel-perfect interfaces with consistent color systems.</p></div>
+      <div class="svc-item"><div class="si-ico">📱</div><div class="si-name" data-i="u_s3">Mobile UI</div><p class="si-desc" data-i="u_s3d">iOS and Android interface design following platform guidelines.</p></div>
+      <div class="svc-item"><div class="si-ico">🌐</div><div class="si-name" data-i="u_s4">Web UI</div><p class="si-desc" data-i="u_s4d">Responsive web interfaces for clarity and great user experience.</p></div>
+      <div class="svc-item"><div class="si-ico">⚡</div><div class="si-name" data-i="u_s5">Prototyping</div><p class="si-desc" data-i="u_s5d">Interactive Figma prototypes simulating the real app experience.</p></div>
+      <div class="svc-item"><div class="si-ico">📐</div><div class="si-name" data-i="u_s6">Design Systems</div><p class="si-desc" data-i="u_s6d">Scalable component libraries keeping design consistent across the product.</p></div>
+    </div>
+    <div class="pkg-title" data-i="uiux_pkg_h">UI/UX Design Packages</div>
+    <div class="pgr">
+      <div class="pc">
+        <div class="pico">✏️</div>
+        <div class="pname" data-i="up1">Simple Design</div>
+        <div class="ptag" data-i="up1t">Wireframes & basic UI</div>
+        <div class="pprice">$300 <small>from</small></div>
+        <div class="pdel">⏱ 1–2 weeks</div>
+        <div class="pline"></div>
+        <ul class="pfeat">
+          <li data-i="up1f1">Up to 5 screens</li>
+          <li>Wireframes + mockups</li>
+          <li>Color & type system</li>
+          <li data-i="up1f4">Source files included</li>
+        </ul>
+        <a href="#contact" class="pbtn outline" data-i="gs">Get Started</a>
+      </div>
+      <div class="pc feat">
+        <div class="pbadge" data-i="pop">Popular</div>
+        <div class="pico">🎨</div>
+        <div class="pname" data-i="up2">Full UI/UX</div>
+        <div class="ptag" data-i="up2t">Complete design system</div>
+        <div class="pprice">$900 <small>from</small></div>
+        <div class="pdel">⏱ 3–5 weeks</div>
+        <div class="pline"></div>
+        <ul class="pfeat">
+          <li data-i="up2f1">Unlimited screens</li>
+          <li>Full component library</li>
+          <li>Interactive prototype</li>
+          <li data-i="up2f4">Developer handoff</li>
+        </ul>
+        <a href="#contact" class="pbtn" data-i="gs">Get Started</a>
+      </div>
+      <div class="pc">
+        <div class="pico">🔗</div>
+        <div class="pname" data-i="up3">Design + Dev</div>
+        <div class="ptag" data-i="up3t">Design & build together</div>
+        <div class="pprice" data-i="custom">Custom</div>
+        <div class="pdel" data-i="disc">⏱ Discussed</div>
+        <div class="pline"></div>
+        <ul class="pfeat">
+          <li data-i="up3f1">Full UI/UX design</li>
+          <li>Full development</li>
+          <li>Launch & support</li>
+          <li data-i="up3f4">One seamless workflow</li>
+        </ul>
+        <a href="#contact" class="pbtn outline" data-i="lt">Let's Talk →</a>
+      </div>
+    </div>
+  </div>
+
+</div></div>
+</section>
+
+<div class="div"></div>
+
+<!-- CONTACT -->
+<section id="contact">
+<div class="wrap"><div class="sec">
+  <div class="cbox">
+    <h2 data-i="c_h">Let's work together.</h2>
+    <p data-i="c_p">Looking for a Flutter Developer? I'm open to full-time, remote, and freelance opportunities. Let's talk.</p>
+    <div class="clinks">
+      <a href="mailto:vkvakhaze35@gmail.com" class="cl">✉️ &nbsp;vkvakhaze35@gmail.com</a>
+      <a href="https://github.com/vanokvakhadze" target="_blank" class="clg">GitHub</a>
+      <a href="https://www.linkedin.com/in/vano-kvakhadze-0b9002267/" target="_blank" class="clg">LinkedIn</a>
+    </div>
+  </div>
+</div></div>
+</section>
+
+<footer>
+  <div class="fl">VK<span>.</span></div>
+  <div class="fr">
+    <div class="fsoc">
+      <a href="https://github.com/vanokvakhadze" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg></a>
+      <a href="https://www.linkedin.com/in/vano-kvakhadze-0b9002267/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+    </div>
+    <div class="fc">© 2026 Vano Kvakhadze · vanokvakhadze.com</div>
+  </div>
+</footer>
+
+<script>
+const T = {
+en:{
+  nav_about:'About',nav_apps:'Apps',nav_svc:'Services',nav_cta:"Let's Talk",
+  status:'Available for new projects',eyebrow:'Flutter Developer · iOS & Mobile Apps',
+  hdesc:'Flutter Developer open to <strong>full-time, remote & freelance</strong> opportunities. I build production-ready mobile apps with clean architecture.',
+  btn_apps:'View My Apps',btn_svc:'Services & Pricing →',
+  st1:'Apps on Store',st2:'Years Mobile Dev',st3:'Lines of Code',
+  fb1:'3 Devices Online',fb3:'1 Alert',built:'Built with',
+  about_tag:'About Me',about_h:'From idea to<br>working product',
+  ap1:"I'm Vano — a mobile & full-stack developer based in Georgia 🇬🇪. Started with <strong>native iOS development</strong>, building real-world apps that help businesses work smarter.",
+  ap2:'After 2 years of Swift, expanded into <strong>Flutter</strong> for cross-platform reach. Now offering a <strong>complete service</strong> — mobile apps, backend APIs, and full web platforms.',
+  ap3:'Work spans <strong>HVAC system management</strong>, location tracking, productivity tools — always with clean architecture and great UX.',
+  tl1r:'Flutter Developer',tl1d:'Cross-platform mobile apps + full-stack web & backend.',
+  tl2r:'iOS Developer',tl2d:'2 years native iOS with Swift. Published apps on the App Store.',
+  tl3y:'THE BEGINNING',tl3r:'First Lines of Code',tl3d:'Fell in love with building things. Never stopped since.',
+  sk_tag:'Tech Stack',sk_h:'Tools I work with',
+  apps_tag:'Portfolio',apps_h:'Apps on the Store',apps_sub:'3 live applications — built from scratch, design to deployment.',
+  nav_web:'Websites',
+  web_tag:'Live Websites',web_h:'Websites in Production',web_sub:'Real client sites — design, build, and deployment, end to end.',
+  mesayas_d:'Esoteric practice platform — tarot readings, moon calendar, wheel of the year, and handcrafted charms. Bilingual, SEO-optimized, with a moody celestial design.',
+  mesayas_app_d:'Shop for handmade talismans, crystals and ritual kits with saved favorites. Tarot, astrology, coffee and dream readings in clear, separate tabs — with smooth onboarding and a refreshed look.',
+  visit:'🌐 Visit Site →',
+  dmt_d:'Professional HVAC system management for technicians. Control devices, manage documents, report and resolve issues.',
+  kaya_d:'HVAC engineering calculator — compute water energy, air duct mass flow, and other key HVAC parameters.',
+  svc_tag:'What I Offer',svc_h:'Complete Development Services',svc_sub:'From mobile apps to enterprise platforms — one developer, end-to-end solutions.',
+  cat_mob:'Mobile',cat_mob_d:'iOS & Flutter apps',cat_web:'Web',cat_web_d:'Sites & web apps',
+  cat_fs:'Full-Stack',cat_fs_d:'APIs & backend',cat_uiux:'UI/UX',cat_uiux_d:'Design systems',
+  m_s1:'iOS Native',m_s1d:'Swift & SwiftUI apps with full App Store submission and TestFlight beta.',
+  m_s2:'Flutter Cross-Platform',m_s2d:'One codebase for iOS & Android. Pixel-perfect UI, native performance.',
+  m_s3:'UI/UX Design',m_s3d:'App wireframes, design systems, and polished interfaces in Figma.',
+  m_s4:'Push Notifications',m_s4d:'Firebase Cloud Messaging or APNs for real-time notifications.',
+  m_s5:'In-App Purchases',m_s5d:'Subscriptions, one-time purchases, Stripe & Apple Pay integration.',
+  m_s6:'Maintenance',m_s6d:'iOS version updates, bug fixes, and new feature additions.',
+  mob_pkg_h:'Mobile App Packages',
+  mp1:'Starter App',mp1t:'Simple focused app',mp1f2:'Up to 5 screens',mp1f5:'1 month support',
+  mp2:'Pro App',mp2t:'Full production app',mp2f2:'Custom UI/UX design',mp2f3:'Backend API included',mp2f5:'3 months support',
+  mp3:'Enterprise',mp3t:'Complex business apps',mp3f3:'Admin dashboard',mp3f4:'Team management',mp3f5:'Long-term support',
+  w_s1:'Landing Pages',w_s1d:'High-converting landing pages for products, startups, and personal brands.',
+  w_s2:'Business Websites',w_s2d:'Multi-page professional sites with CMS, blog, and Google Analytics.',
+  w_s3:'E-Commerce',w_s3d:'Online stores with payment integration and order tracking systems.',
+  w_s4:'Web Applications',w_s4d:'Dashboards, SaaS tools, and data-driven web apps with user auth.',
+  w_s5:'SEO & Performance',w_s5d:'Core Web Vitals optimization, meta tags, and speed improvements.',
+  w_s6:'SSL & Security',w_s6d:'HTTPS setup, security headers, and protection against vulnerabilities.',
+  web_pkg_h:'Web Development Packages',
+  wp1:'Landing Page',wp1t:'One-page website',wp1f4:'Domain connection',
+  wp2:'Business Website',wp2t:'Multi-page professional',wp2f1:'Up to 8 pages',wp2f4:'2 months support',
+  wp3:'Web App',wp3t:'Full web application',wp3f2:'User auth & dashboard',wp3f4:'3 months support',
+  fs_s1:'REST API',fs_s1d:'Scalable, documented REST APIs with auth, rate limiting, and error handling.',
+  fs_s2:'Database Design',fs_s2d:'PostgreSQL, MongoDB schema design, indexing, and performance optimization.',
+  fs_s3:'Auth & Security',fs_s3d:'JWT, OAuth2, role-based access control, and security best practices.',
+  fs_s4:'Cloud & DevOps',fs_s4d:'AWS, Firebase, VPS, Docker containers, CI/CD pipelines, and monitoring.',
+  fs_s5:'Real-Time',fs_s5d:'WebSocket, live notifications, chat systems, and real-time data sync.',
+  fs_s6:'Admin Dashboards',fs_s6d:'Custom admin panels with analytics, user management, and data visualization.',
+  fs_pkg_h:'Full-Stack Packages',
+  fp1:'MVP Package',fp1t:'Idea to first launch',fp1f4:'2 months support',
+  fp2:'Full Product',fp2t:'Complete solution',fp2f5:'6 months support',
+  fp3:'Retainer',fp3t:'Ongoing dev partner',fp3f1:'Dedicated dev hours',fp3f2:'Monthly new features',fp3f4:'Priority support',
+  u_s1:'Wireframing',u_s1d:'Low and high-fidelity wireframes mapping the full user journey.',
+  u_s2:'Visual Design',u_s2d:'Polished, pixel-perfect interfaces with consistent color systems.',
+  u_s3:'Mobile UI',u_s3d:'iOS and Android interface design following platform guidelines.',
+  u_s4:'Web UI',u_s4d:'Responsive web interfaces for clarity and great user experience.',
+  u_s5:'Prototyping',u_s5d:'Interactive Figma prototypes simulating the real app experience.',
+  u_s6:'Design Systems',u_s6d:'Scalable component libraries keeping design consistent across the product.',
+  uiux_pkg_h:'UI/UX Design Packages',
+  up1:'Simple Design',up1t:'Wireframes & basic UI',up1f1:'Up to 5 screens',up1f4:'Source files included',
+  up2:'Full UI/UX',up2t:'Complete design system',up2f1:'Unlimited screens',up2f4:'Developer handoff',
+  up3:'Design + Dev',up3t:'Design & build together',up3f1:'Full UI/UX design',up3f4:'One seamless workflow',
+  custom:'Custom',disc:'⏱ Discussed',min3:'⏱ Min. 3 months',pop:'Popular',bv:'Best Value',
+  gs:'Get Started',lt:"Let's Talk →",
+  c_h:"Let's work together.",c_p:"Looking for a Flutter Developer? I'm open to full-time, remote, and freelance opportunities. Let's talk.",
+},
+ka:{
+  nav_about:'ჩვენ შესახებ',nav_apps:'აპლიკაციები',nav_svc:'სერვისები',nav_cta:'დამიკავშირდი',
+  status:'ხელმისაწვდომია პროექტებისთვის',eyebrow:'Flutter Developer · iOS & მობილური',
+  hdesc:'Flutter Developer — <strong>full-time, remote და freelance</strong> შეთავაზებებისთვის ღია ვარ. ვქმნი production-ready მობილურ აპლიკაციებს.',
+  btn_apps:'ჩემი აპლიკაციები',btn_svc:'სერვისები და ფასები →',
+  st1:'App Store-ზე',st2:'წელი Dev',st3:'კოდის სტრიქონი',
+  fb1:'3 მოწყობილობა ონლაინ',fb3:'1 შეტყობინება',built:'ტექნოლოგიები',
+  about_tag:'ჩვენ შესახებ',about_h:'იდეიდან<br>მუშა პროდუქტამდე',
+  ap1:'მე ვარ ვანო — მობილური და full-stack დეველოპერი საქართველოდან 🇬🇪. დავიწყე <strong>native iOS</strong>-ით.',
+  ap2:'2 წლის Swift-ის შემდეგ გავფართოვდი <strong>Flutter-ზე</strong>. ახლა ვთავაზობ <strong>სრულ სერვისს</strong>.',
+  ap3:'ვმუშაობ <strong>HVAC სისტემებზე</strong>, ლოკაციის ტრეკინგზე, productivity ინსტრუმენტებზე.',
+  tl1r:'Flutter დეველოპერი',tl1d:'Cross-platform მობილური + full-stack.',
+  tl2r:'iOS დეველოპერი',tl2d:'2 წელი native iOS Swift-ით. აპლიკაციები App Store-ზე.',
+  tl3y:'დასაწყისი',tl3r:'კოდის პირველი სტრიქონი',tl3d:'შევიყვარე building.',
+  sk_tag:'ტექ სტეკი',sk_h:'ჩემი ინსტრუმენტები',
+  apps_tag:'პორტფოლიო',apps_h:'App Store-ზე',apps_sub:'3 ცოცხალი აპლიკაცია.',
+  nav_web:'ვებსაიტები',
+  web_tag:'ცოცხალი ვებსაიტები',web_h:'ვებსაიტები პროდაქშენში',web_sub:'რეალური კლიენტების საიტები — დიზაინი, აწყობა და დეპლოი, თავიდან ბოლომდე.',
+  mesayas_d:'ეზოთერული პრაქტიკის პლატფორმა — ტაროს გაშლა, მთვარის კალენდარი, წლის ბორბალი და ხელნაკეთი თილისმები. ორენოვანი, SEO-ოპტიმიზებული, მისტიური ციური დიზაინით.',
+  mesayas_app_d:'ხელნაკეთი თილისმები, კრისტალები და რიტუალური ნაკრები მაღაზიაში, ფავორიტების შენახვით. ტარო, ასტროლოგია, ყავისა და სიზმრების გაშლა ცალკე ტაბებში.',
+  visit:'🌐 ვებსაიტი →',
+  dmt_d:'HVAC სისტემის მართვის Flutter აპი. Device control, real-time updates, დოკუმენტების მართვა.',
+  kaya_d:'HVAC სფეროს კალკულატორი — წყლის ენერგიის და სხვა პარამეტრების გამოთვლა.',
+  svc_tag:'რას გთავაზობ',svc_h:'სრული სერვისები',svc_sub:'მობილური აპიდან enterprise პლატფორმამდე.',
+  cat_mob:'მობილური',cat_mob_d:'iOS და Flutter',cat_web:'ვებ',cat_web_d:'საიტები',
+  cat_fs:'Full-Stack',cat_fs_d:'API და backend',cat_uiux:'UI/UX',cat_uiux_d:'დიზაინი',
+  m_s1:'iOS Native',m_s1d:'Swift & SwiftUI App Store submission-ით.',
+  m_s2:'Flutter',m_s2d:'ერთი კოდბაზა iOS და Android-ისთვის.',
+  m_s3:'UI/UX დიზაინი',m_s3d:'App wireframes, Figma-ში.',
+  m_s4:'Push შეტყობინებები',m_s4d:'Firebase Cloud Messaging ან APNs.',
+  m_s5:'In-App შესყიდვები',m_s5d:'Subscription-ები, Stripe, Apple Pay.',
+  m_s6:'მხარდაჭერა',m_s6d:'iOS განახლებები, bug fix-ები.',
+  mob_pkg_h:'მობილური პაკეტები',
+  mp1:'Starter',mp1t:'მარტივი აპი',mp1f2:'5 ეკრანამდე',mp1f5:'1 თვის მხარდაჭერა',
+  mp2:'Pro',mp2t:'სრული production',mp2f2:'Custom UI/UX',mp2f3:'Backend API',mp2f5:'3 თვე',
+  mp3:'Enterprise',mp3t:'რთული ბიზნეს აპი',mp3f3:'Admin dashboard',mp3f4:'გუნდის მართვა',mp3f5:'გრძელვადიანი',
+  w_s1:'Landing Pages',w_s1d:'მაღალი კონვერსიის გვერდები.',
+  w_s2:'ბიზნეს საიტები',w_s2d:'CMS, ბლოგი, Google Analytics.',
+  w_s3:'E-Commerce',w_s3d:'ონლაინ მაღაზიები გადახდით.',
+  w_s4:'ვებ აპლიკაციები',w_s4d:'Dashboard, SaaS, user auth.',
+  w_s5:'SEO',w_s5d:'Core Web Vitals, meta tags.',
+  w_s6:'SSL',w_s6d:'HTTPS, security headers.',
+  web_pkg_h:'ვებ პაკეტები',
+  wp1:'Landing Page',wp1t:'ერთგვერდიანი',wp1f4:'დომეინი',
+  wp2:'ბიზნეს საიტი',wp2t:'მრავალგვერდიანი',wp2f1:'8 გვერდამდე',wp2f4:'2 თვე',
+  wp3:'ვებ აპი',wp3t:'სრული აპლიკაცია',wp3f2:'User auth',wp3f4:'3 თვე',
+  fs_s1:'REST API',fs_s1d:'სკალირებადი API auth-ით.',
+  fs_s2:'მონაცემთა ბაზა',fs_s2d:'PostgreSQL, MongoDB.',
+  fs_s3:'Auth',fs_s3d:'JWT, OAuth2, RBAC.',
+  fs_s4:'Cloud',fs_s4d:'AWS, Docker, CI/CD.',
+  fs_s5:'Real-Time',fs_s5d:'WebSocket, chat.',
+  fs_s6:'Admin',fs_s6d:'Custom admin panels.',
+  fs_pkg_h:'Full-Stack პაკეტები',
+  fp1:'MVP',fp1t:'იდეიდან launch-მდე',fp1f4:'2 თვე',
+  fp2:'სრული პროდუქტი',fp2t:'ერთი developer',fp2f5:'6 თვე',
+  fp3:'Retainer',fp3t:'მუდმივი პარტნიორი',fp3f1:'Dev საათები',fp3f2:'ახალი ფუნქციები',fp3f4:'პრიორიტეტი',
+  u_s1:'Wireframes',u_s1d:'Low/high-fidelity wireframes.',
+  u_s2:'ვიზუალი',u_s2d:'Pixel-perfect ინტერფეისები.',
+  u_s3:'Mobile UI',u_s3d:'iOS და Android დიზაინი.',
+  u_s4:'Web UI',u_s4d:'Responsive ვებ ინტერფეისები.',
+  u_s5:'Prototype',u_s5d:'Figma პროტოტიპები.',
+  u_s6:'Design System',u_s6d:'კომპონენტების ბიბლიოთეკა.',
+  uiux_pkg_h:'UI/UX პაკეტები',
+  up1:'მარტივი',up1t:'Wireframes + UI',up1f1:'5 ეკრანამდე',up1f4:'Source ფაილები',
+  up2:'სრული UI/UX',up2t:'Design system',up2f1:'შეუზღუდავი',up2f4:'Developer handoff',
+  up3:'დიზაინი + Dev',up3t:'ერთად',up3f1:'სრული UI/UX',up3f4:'ერთი workflow',
+  custom:'Custom',disc:'⏱ განსახილველი',min3:'⏱ მინ. 3 თვე',pop:'პოპულარული',bv:'საუკეთესო',
+  gs:'დაწყება',lt:'ვისაუბროთ →',
+  c_h:'ავაშენოთ რამე.',c_p:'გაქვს პროექტი? სიამოვნებით მოვისმენ. მოდი ვისაუბროთ.',
+},
+};
+
+function applyLang(lang){
+  const t=T[lang];
+  document.querySelectorAll('[data-i]').forEach(el=>{const k=el.getAttribute('data-i');if(t[k]!==undefined)el.innerHTML=t[k];});
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));
+  document.body.setAttribute('data-lang',lang);
+}
+document.querySelectorAll('.lang-btn').forEach(b=>b.addEventListener('click',()=>applyLang(b.dataset.lang)));
+applyLang('en');
+
+// Theme
+const tb=document.getElementById('themeBtn');
+let dark=true;
+tb.addEventListener('click',()=>{
+  dark=!dark;
+  document.documentElement.setAttribute('data-theme',dark?'dark':'light');
+});
+
+// Service switcher
+function switchCat(el){
+  document.querySelectorAll('.svc-cat').forEach(c=>c.classList.remove('active'));
+  document.querySelectorAll('.svc-panel').forEach(p=>p.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('panel-'+el.dataset.cat).classList.add('active');
+}
+</script>
 </body>
 </html>
